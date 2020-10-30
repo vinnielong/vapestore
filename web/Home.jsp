@@ -42,7 +42,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Vape Of 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="Catagori.html" class="btn hero-btn">Shop Now</a>
+                                            <a href="Categories.jsp" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                            <a href="Categories.jsp" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
