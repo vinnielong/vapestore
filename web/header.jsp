@@ -34,7 +34,6 @@
                             <div class="header-info-right">
                                 <ul>                                          
                                     <li><a href="Login.jsp">My Account </a></li>
-                                    <li><a href="product_list.jsp">Wish List  </a></li>
                                     <li><a href="Cart.jsp">Cart</a></li>
                                     <li><a href="Checkout.jsp">Checkout</a></li>
                                 </ul>
@@ -58,22 +57,9 @@
                                 <nav>                                                
                                     <ul id="navigation">                                                                                                                                     
                                         <li><a href="Home.jsp">Home</a></li>
-                                        <li><a href="Categories.jsp">Categories</a></li>
-                                        <li class="hot"><a href="#">Latest</a>
-                                            <ul class="submenu">
-                                                <li><a href="Products.jsp"> Product list</a></li>
-                                                <li><a href="single-product.jsp"> Product Details</a></li>
-                                            </ul>
-                                        </li>                                           
-                                        <li><a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="Login.jsp">Login</a></li>                                            
-                                                <li><a href="About.jsp">About</a></li>
-                                                <li><a href="Cart.jsp">Shopping Cart</a></li>
-                                                <li><a href="Checkout.jsp">Product Checkout</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="Categories.jsp">Shop</a></li>    
                                         <li><a href="Contact.jsp">Contact</a></li>
+                                        <li><a href="About.jsp">About</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -98,7 +84,7 @@
                                         <a href="Cart.jsp"><i class="fas fa-shopping-cart"></i></a>
                                     </div>
                                 </li>
-                                <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Sign in</a></li>
+                                <li class="d-none d-lg-block"> <a href="Login.jsp" class="btn header-btn">Sign in</a></li>
                             </ul>
                         </div>
                         <!-- Mobile Menu -->
