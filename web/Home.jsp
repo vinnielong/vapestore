@@ -163,7 +163,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -186,7 +186,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -212,7 +212,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -235,7 +235,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -258,7 +258,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -284,7 +284,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -312,7 +312,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -335,7 +335,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -361,7 +361,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -384,7 +384,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -410,7 +410,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -436,7 +436,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -464,7 +464,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -490,7 +490,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -516,7 +516,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -539,7 +539,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -565,7 +565,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -588,7 +588,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -619,7 +619,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -642,7 +642,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -668,7 +668,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -691,7 +691,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -714,7 +714,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
@@ -740,7 +740,7 @@
                                                 <i class="far fa-star low-star"></i>
                                                 <i class="far fa-star low-star"></i>
                                             </div>
-                                            <h4><a href="#">Green Dress with details</a></h4>
+                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
                                                     <li>$40.00</li>
