@@ -57,7 +57,7 @@
                                 <nav>                                                
                                     <ul id="navigation">                                                                                                                                     
                                         <li><a href="Home.jsp">Home</a></li>
-                                        <li><a href="Categories.jsp">Shop</a></li>    
+                                        <li><a href="Products.jsp">Shop</a></li>    
                                         <li><a href="Contact.jsp">Contact</a></li>
                                         <li><a href="About.jsp">About</a></li>
                                     </ul>
@@ -72,16 +72,6 @@
                                         <div class="search-icon">
                                             <i class="fas fa-search special-tag"></i>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class=" d-none d-xl-block">
-                                    <div class="favorit-items">
-                                        <i class="far fa-heart"></i>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="shopping-card">
-                                        <a href="Cart.jsp"><i class="fas fa-shopping-cart"></i></a>
                                     </div>
                                 </li>
                                 <li class="d-none d-lg-block"> <a href="Login.jsp" class="btn header-btn">Sign in</a></li>

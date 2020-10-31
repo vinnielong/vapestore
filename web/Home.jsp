@@ -773,8 +773,8 @@
                             <div class="col-xl-8 col-lg-8">
                                 <div class="best-product-caption">
                                     <h2>Find The Best Product<br> from Our Shop</h2>
-                                    <p>Designers who are interesten creating state ofthe.</p>
-                                    <a href="#" class="black-btn">Shop Now</a>
+                                    <p>Customers who are interested creating state of the.</p>
+                                    <a href="Products.jsp" class="black-btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
