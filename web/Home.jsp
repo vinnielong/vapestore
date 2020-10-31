@@ -75,7 +75,7 @@
             </div>
             <!-- slider Area End-->
             <!-- Category Area Start-->
-            <section class="category-area section-padding30" style="padding-top: 30;">
+            <section class="category-area section-padding30" style="padding-top: 10;">
                 <div class="container-fluid">
                     <!-- Section Tittle -->
                     <div class="row">
@@ -847,16 +847,16 @@
                                 <img src="assets/img/gallery/gallery1.jpg" alt="">
                             </div> 
                             <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery2.jpg" alt="">
+                                <img src="assets/img/gallery/gallery2" alt="">
                             </div>
                             <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery3.jpg" alt="">
+                                <img src="assets/img/gallery/gallery3" alt="">
                             </div>
                             <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery4.jpg" alt="">
+                                <img src="assets/img/gallery/gallery4" alt="">
                             </div>
                             <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery5.jpg" alt="">
+                                <img src="assets/img/gallery/gallery5" alt="">
                             </div>
                         </div>
                     </div>

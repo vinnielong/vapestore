@@ -2703,7 +2703,7 @@ input:focus::-moz-placeholder {
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   /* line 778, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
   .section-padding30 {
-    padding-top: 200px;
+    padding-top: 0px;
     padding-bottom: 170px;
   }
 }
