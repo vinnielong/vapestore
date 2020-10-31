@@ -75,7 +75,7 @@
             </div>
             <!-- slider Area End-->
             <!-- Category Area Start-->
-            <section class="category-area section-padding30" style="padding-top: 10;">
+            <section class="category-area section-padding30" style="padding-top: 0px;">
                 <div class="container-fluid">
                     <!-- Section Tittle -->
                     <div class="row">
@@ -90,7 +90,7 @@
                             <div class="single-category mb-30">
                                 <div class="category-img">
                                     <a href="Products.jsp">
-                                    <img src="assets/img/categories/cat1.jpg" alt="">
+                                        <img src="assets/img/categories/cat1.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             <div class="single-category mb-30">
                                 <div class="category-img text-center">
                                     <a href="Products.jsp">
-                                    <img src="assets/img/categories/cat2.jpg" alt="">      
+                                        <img src="assets/img/categories/cat2.jpg" alt="">      
                                     </a>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                             <div class="single-category mb-30">
                                 <div class="category-img">
                                     <a href="Products.jsp">
-                                    <img src="assets/img/categories/cat3.jpg" alt="">
+                                        <img src="assets/img/categories/cat3.jpg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
             </section>
             <!-- Category Area End
             <!-- Latest Products Start -->
-            <section class="latest-product-area padding-bottom">
+            <section class="latest-product-area padding-bottom" style="padding-bottom: 130px;">
                 <div class="container">
                     <div class="row product-btn d-flex justify-content-end align-items-end">
                         <!-- Section Tittle -->
@@ -155,14 +155,7 @@
                                                 <span>New</span>
                                             </div>
                                         </div>
-                                        <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+                                        <div class="product-caption">                                           
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -179,13 +172,7 @@
                                             <img src="assets/img/categories/product2.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -205,13 +192,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -228,13 +209,7 @@
                                             <img src="assets/img/categories/product4.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -251,13 +226,7 @@
                                             <img src="assets/img/categories/product5.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -277,13 +246,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -305,13 +268,7 @@
                                             <img src="assets/img/categories/product4.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -328,13 +285,7 @@
                                             <img src="assets/img/categories/product5.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -354,13 +305,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -377,13 +322,7 @@
                                             <img src="assets/img/categories/product2.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -403,13 +342,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -429,13 +362,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -457,13 +384,7 @@
                                             <img src="assets/img/categories/product2.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -483,13 +404,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -509,13 +424,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -532,13 +441,7 @@
                                             <img src="assets/img/categories/product4.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -558,13 +461,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -581,13 +478,7 @@
                                             <img src="assets/img/categories/product5.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -612,13 +503,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -635,13 +520,7 @@
                                             <img src="assets/img/categories/product2.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -661,13 +540,7 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -684,13 +557,7 @@
                                             <img src="assets/img/categories/product4.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
+
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -707,13 +574,6 @@
                                             <img src="assets/img/categories/product5.jpg" alt="">
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -733,13 +593,6 @@
                                             </div>
                                         </div>
                                         <div class="product-caption">
-                                            <div class="product-ratting">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                                <i class="far fa-star low-star"></i>
-                                            </div>
                                             <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
                                             <div class="price">
                                                 <ul>
@@ -756,59 +609,7 @@
                     <!-- End Nav Card -->
                 </div>
             </section>
-            <!-- Latest Products End -->
-            <!-- Best Product Start -->
-            <div class="best-product-area lf-padding" >
-                <div class="product-wrapper bg-height" style="background-image: url('assets/img/categories/card.png')">
-                    <div class="container position-relative">
-                        <div class="row justify-content-between align-items-end">
-                            <div class="product-man position-absolute  d-none d-lg-block">
-                                <img src="assets/img/categories/card-man.png" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
-                                <div class="vertical-text">
-                                    <span>Manz</span>
-                                </div>
-                            </div>
-                            <div class="col-xl-8 col-lg-8">
-                                <div class="best-product-caption">
-                                    <h2>Find The Best Product<br> from Our Shop</h2>
-                                    <p>Customers who are interested creating state of the.</p>
-                                    <a href="Products.jsp" class="black-btn">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            <!-- Latest Offers Start -->
-            <div class="latest-wrapper lf-padding">
-                <div class="latest-area latest-height d-flex align-items-center" data-background="assets/img/collection/latest-offer.png">
-                    <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
-                                <div class="latest-caption">
-                                    <h2>Get Our<br>Latest Offers News</h2>
-                                    <p>Subscribe news latter</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-5 col-md-6 ">
-                                <div class="latest-subscribe">
-                                    <form action="#">
-                                        <input type="email" placeholder="Your email here">
-                                        <button>Shop Now</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- man Shape -->
-                    <div class="man-shape">
-                        <img src="assets/img/collection/latest-man.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- Latest Offers End -->
+            <!-- Latest Products End --> 
             <!-- Shop Method Start-->
             <div class="shop-method-area section-padding30" style="padding-top: 10px">
                 <div class="container">
@@ -830,7 +631,7 @@
                         <div class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-method mb-40">
                                 <i class="ti-reload"></i>
-                                <h6>Secure Payment System</h6>
+                                <h6>Refund Policy System</h6>
                                 <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
                             </div>
                         </div>
@@ -838,31 +639,43 @@
                 </div>
             </div>
             <!-- Shop Method End-->
-            <!-- Gallery Start-->
-            <div class="gallery-wrapper lf-padding">
-                <div class="gallery-area">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery1.jpg" alt="">
-                            </div> 
-                            <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery2" alt="">
+            <!-- Best Product Start -->
+            <div class="best-product-area lf-padding" style="background: rgb(250, 201, 4);">
+                <div class="product-wrapper bg-height" >
+                    <div class="container position-relative">
+                        <div class="row justify-content-between align-items-end">
+                            <div class="product-man position-absolute  d-none d-lg-block" style="left: -2%; top: 25%;">
+                                <img src="assets/img/categories/resize.png" alt="">
                             </div>
-                            <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery3" alt="">
+                            <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
                             </div>
-                            <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery4" alt="">
-                            </div>
-                            <div class="gallery-items">
-                                <img src="assets/img/gallery/gallery5" alt="">
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="best-product-caption">
+                                    <h2 style="padding-left: 140px;">Find The Best Product<br> from Our Shop</h2>
+                                    <p style="padding-left: 140px;">Customers who are interested creating state of the.</p>
+                                    <a href="Products.jsp" class="black-btn" style="margin-left: 140px">Shop Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Gallery End-->
+            <div class="subscribe_part section_padding" style="background: #191d34">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="subscribe_part_content">
+                                <h2>Get promotions & updates!</h2>
+                                <p>Seamlessly empower fully researched growth strategies and internal or “organic” sources credibly innovate granular internal .</p>
+                                <div class="subscribe_form">
+                                    <input type="email" placeholder="Enter your mail">
+                                    <a href="#" class="btn_1">Subscribe</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <%@include file="footer.jsp"%>
         <%@include file="script.jsp"%>
