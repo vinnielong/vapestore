@@ -50,43 +50,17 @@
                     <div class="mt-10">
                         <input type="text" name="address" value="<%=acc.getAddress()%>" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
                     </div><br>
-                    City:
-                    <div class="input-group-icon mt-10">
-                        <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                        <div class="form-select" id="default-select" "="">
-                            <select style="display: none;">
-                                <option value="1">City</option>
-                                <option value="1">Hanoi</option>
-                                <option value="1">Paris</option>
-                                <option value="1">New York</option>
-                                <option value="1">Hai Phong</option>
-                            </select><div class="nice-select" tabindex="0"><span class="current">City</span><ul class="list"><li data-value=" 1" class="option selected">City</li><li data-value="1" class="option">Hanoi</li><li data-value="1" class="option">Paris</li><li data-value="1" class="option">New York</li><li data-value="1" class="option">Hai Phone</li></ul></div>
-                        </div>
-                    </div><br>
-                    Country:
-                    <div class="input-group-icon mt-10">
-                        <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                        <div class="form-select" id="default-select" "="">
-                            <select style="display: none;">
-                                <option value="1">Country</option>
-                                <option value="1">Vietnam</option>
-                                <option value="1">France</option>
-                                <option value="1">England</option>
-                                <option value="1">America</option>
-                            </select><div class="nice-select" tabindex="0"><span class="current">Country</span><ul class="list"><li data-value=" 1" class="option selected">Country</li><li data-value="1" class="option">Vietnam</li><li data-value="1" class="option">French</li><li data-value="1" class="option">England</li><li data-value="1" class="option">America</li></ul></div>
-                        </div>
-                    </div><br>
                     Phone Number:
                     <div class="mt-10">
                         <input type="text" name="phone_num" value="<%=acc.getPhonenumber()%>" placeholder="Phone Num" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Num'" required="" class="single-input">
                     </div><br>                   
-                </form>
-                <a href="reset" class="genric-btn primary e-large" style="float: left; background-color: #4cd3e3;">Reset Password</a>
-                <button type="submit" value="submit" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3;">Save</button>
+                    <a href="reset" class="genric-btn primary e-large" style="float: left; background-color: #4cd3e3;">Reset Password</a>
+                    <button type="submit" value="submit" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3;">Save</button>
             </div>
-        </div>
+        </form>
+    </div>
 
-        <%@include file="components/footer.jsp"%>
-        <%@include file="components/script.jsp"%>
-    </body>
+    <%@include file="components/footer.jsp"%>
+    <%@include file="components/script.jsp"%>
+</body>
 </html>

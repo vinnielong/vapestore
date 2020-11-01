@@ -54,13 +54,17 @@ public class RegisterController extends HttpServlet {
         String password = request.getParameter("pass");
         String repassword = request.getParameter("repass");
         if(!password.equals(repassword)) {
-            
+            request.setAttribute("errorMsg", "Password and Repassword not match!");
+            doGet(request, response);
         } else {
             Account acc = new Account(username, password, fullname, email, phonenumber, address);
             AccountDAO dao = new AccountDAO();
             boolean isCreated = dao.register(acc);
             if(isCreated) {
                 response.sendRedirect("login");
+            } else {
+                request.setAttribute("errorMsg", "Password and Repassword not match!");
+                doGet(request, response);
             }
         }
     }

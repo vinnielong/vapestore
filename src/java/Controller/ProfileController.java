@@ -54,12 +54,14 @@ public class ProfileController extends BaseAuthController {
         String username = request.getParameter("username");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
-        String address = request.getParameter("address");
         String phonenumber = request.getParameter("phonenumber");
+        String address = request.getParameter("address");
         Account account = new Account(username, dao.getPassword(username) ,fullname, email, phonenumber, address);
         boolean isUpdated = dao.updateAccount(account);
         if(isUpdated) {
             response.sendRedirect("profile");
+        } else {
+            response.getWriter().println(dao.getPassword(username));
         }
     }
 

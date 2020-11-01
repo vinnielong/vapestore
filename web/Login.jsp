@@ -47,14 +47,12 @@
                             <div class="login_part_form_iner">
                                 <h3>Welcome Back ! <br>
                                     Please Sign in now</h3>
-                                <form class="row contact_form" action="login" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="login" method="post">
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
-                                               placeholder="Username">
+                                        <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username" required>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
-                                               placeholder="Password">
+                                        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required>
                                     </div>
                                     <%if(request.getAttribute("errorMsg") != null) {%>
                                     <div class="col-md-12 form-group p_star">

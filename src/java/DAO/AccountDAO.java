@@ -86,11 +86,11 @@ public class AccountDAO extends BaseDAO {
         try {
             String sql = "UPDATE dbo.Account SET fullname = ?, email = ?, phonenumber = ?, address = ? WHERE username = ?";
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1, account.getUsername());
-            st.setString(2, account.getFullname());
-            st.setString(3, account.getEmail());
-            st.setString(4, account.getPhonenumber());
-            st.setString(5, account.getAddress());
+            st.setString(1, account.getFullname());
+            st.setString(2, account.getEmail());
+            st.setString(3, account.getPhonenumber());
+            st.setString(4, account.getAddress());
+            st.setString(5, account.getUsername());
             isUpdated = st.executeUpdate() > 0;
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
