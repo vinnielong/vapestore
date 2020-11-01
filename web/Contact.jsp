@@ -91,9 +91,9 @@
                 <div class="col-lg-8">
                     <form class="form-contact contact_form" action="contact" method="post" id="contactForm" novalidate="novalidate">
                         <div class="row">
-                            <%if (request.getAttribute("errorMsg") != null) {%>
+                            <%if (request.getAttribute("msg") != null) {%>
                             <div class="col-sm-6 form-group p_star">
-                                <label for="incorrect" style="color: red;"><%=request.getAttribute("errorMsg")%></label>                                  </div>
+                                <label for="incorrect" style="color: red;"><%=request.getAttribute("msg")%></label>                                  </div>
                                 <%}%>
                             <div class="col-12">
                                 <div class="form-group">

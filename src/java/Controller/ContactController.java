@@ -54,10 +54,11 @@ public class ContactController extends HttpServlet {
         ContactDAO dao = new ContactDAO();
         boolean isSent = dao.sendContact(c);
         if(isSent) {
-            request.setAttribute("message", "Form is submitted");
             response.sendRedirect("contact");
+            request.setAttribute("msg", "Form submitted!");
+            
         } else {
-            request.setAttribute("message", "Server encounters an error. Please try again!");
+            request.setAttribute("msg", "Server encounters an error. Please try again!");
             doGet(request, response);
         }
     }

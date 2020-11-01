@@ -42,7 +42,7 @@
                                         <input type="text" class="form-control" id="password" name="username" value=""></div><br>
                                     Full Name:
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="fullname" name="fullname" value=""></div><br>
+                                        <input type="text" class="form-control" id="password" name="fullname" value=""></div><br>
                                     E-mail:
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="password" name="email" value=""></div><br>

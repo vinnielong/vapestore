@@ -38,7 +38,7 @@
                             %>
                             <div class="header-info-right">
                                 <ul>                                          
-                                    <li><a href="Profile.jsp">My Account </a></li>
+                                    <li><a href="profile?username=<%=account.getUsername()%>">My Account </a></li>
                                     <li><a href="Cart.jsp">Cart</a></li>
                                     <li><a href="Checkout.jsp">Checkout</a></li>
                                 </ul>

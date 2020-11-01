@@ -18,8 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class RegisterController extends HttpServlet {
+public class ProfileController extends BaseAuthController {
 
+    AccountDAO dao = new AccountDAO();
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -30,9 +32,12 @@ public class RegisterController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("Register.jsp").forward(request, response);
+        String username = request.getParameter("username");
+        Account account = dao.getAccountByID(username);
+        request.setAttribute("acc", account);
+        request.getRequestDispatcher("Profile.jsp").forward(request, response);
     }
 
     /**
@@ -44,24 +49,17 @@ public class RegisterController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
         String phonenumber = request.getParameter("phonenumber");
-        String password = request.getParameter("pass");
-        String repassword = request.getParameter("repass");
-        if(!password.equals(repassword)) {
-            
-        } else {
-            Account acc = new Account(username, password, fullname, email, phonenumber, address);
-            AccountDAO dao = new AccountDAO();
-            boolean isCreated = dao.register(acc);
-            if(isCreated) {
-                response.sendRedirect("login");
-            }
+        Account account = new Account(username, dao.getPassword(username) ,fullname, email, phonenumber, address);
+        boolean isUpdated = dao.updateAccount(account);
+        if(isUpdated) {
+            response.sendRedirect("profile");
         }
     }
 

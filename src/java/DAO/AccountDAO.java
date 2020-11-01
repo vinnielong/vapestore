@@ -29,6 +29,7 @@ public class AccountDAO extends BaseDAO {
             while (rs.next()) {
                 account = new Account();
                 account.setUsername(rs.getString("username"));
+                account.setFullname(rs.getString("fullname"));
                 account.setPassword(rs.getString("password"));
                 account.setEmail(rs.getString("email"));
                 account.setPhonenumber(rs.getString("phonenumber"));
@@ -40,4 +41,76 @@ public class AccountDAO extends BaseDAO {
         return account;
     }
 
+    public Account getAccountByID(String username) {
+        Account account = null;
+        try {
+            String sql = "SELECT * FROM dbo.Account WHERE username = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                account = new Account();
+                account.setUsername(rs.getString("username"));
+                account.setFullname(rs.getString("fullname"));
+                account.setPassword(rs.getString("password"));
+                account.setEmail(rs.getString("email"));
+                account.setPhonenumber(rs.getString("phonenumber"));
+                account.setAddress(rs.getString("address"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return account;
+    }
+
+    public boolean register(Account acc) {
+        boolean isCreated = false;
+        try {
+            String sql = "INSERT INTO dbo.Account(username, fullname, password, email, phonenumber, address) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, acc.getUsername());
+            st.setString(2, acc.getFullname());
+            st.setString(3, acc.getPassword());
+            st.setString(4, acc.getEmail());
+            st.setString(5, acc.getPhonenumber());
+            st.setString(6, acc.getAddress());
+            isCreated = st.executeUpdate() > 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return isCreated;
+    }
+
+    public boolean updateAccount(Account account) {
+        boolean isUpdated = false;
+        try {
+            String sql = "UPDATE dbo.Account SET fullname = ?, email = ?, phonenumber = ?, address = ? WHERE username = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, account.getUsername());
+            st.setString(2, account.getFullname());
+            st.setString(3, account.getEmail());
+            st.setString(4, account.getPhonenumber());
+            st.setString(5, account.getAddress());
+            isUpdated = st.executeUpdate() > 0;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return isUpdated;
+    }
+    
+    public String getPassword(String username) {   
+        String password = "";
+        try {
+            String sql = "SELECT password FROM dbo.Account WHERE username = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                password = rs.getString("password");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return password;
+    }
 }

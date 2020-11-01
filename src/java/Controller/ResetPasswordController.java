@@ -5,8 +5,6 @@
  */
 package Controller;
 
-import DAO.AccountDAO;
-import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class RegisterController extends HttpServlet {
+public class ResetPasswordController extends BaseAuthController {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -30,9 +28,9 @@ public class RegisterController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("Register.jsp").forward(request, response);
+        request.getRequestDispatcher("ResetPassword.jsp").forward(request, response);
     }
 
     /**
@@ -44,25 +42,9 @@ public class RegisterController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String fullname = request.getParameter("fullname");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-        String phonenumber = request.getParameter("phonenumber");
-        String password = request.getParameter("pass");
-        String repassword = request.getParameter("repass");
-        if(!password.equals(repassword)) {
-            
-        } else {
-            Account acc = new Account(username, password, fullname, email, phonenumber, address);
-            AccountDAO dao = new AccountDAO();
-            boolean isCreated = dao.register(acc);
-            if(isCreated) {
-                response.sendRedirect("login");
-            }
-        }
+        
     }
 
     /**
