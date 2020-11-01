@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.ContactDAO;
+import Model.Contact;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -48,6 +50,16 @@ public class ContactController extends HttpServlet {
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
         String message = request.getParameter("message");
+        Contact c = new Contact(name, email, subject, message);
+        ContactDAO dao = new ContactDAO();
+        boolean isSent = dao.sendContact(c);
+        if(isSent) {
+            request.setAttribute("message", "Form is submitted");
+            response.sendRedirect("contact");
+        } else {
+            request.setAttribute("message", "Server encounters an error. Please try again!");
+            doGet(request, response);
+        }
     }
 
     /**

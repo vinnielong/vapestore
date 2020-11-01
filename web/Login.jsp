@@ -62,9 +62,7 @@
                                     </div>
                                     <%}%>
                                     <div class="col-md-12 form-group">                                       
-                                        <button type="submit" value="submit" class="btn_3">
-                                            log in
-                                        </button>
+                                        <button type="submit" value="submit" class="btn_3">log in</button>
                                         <a class="lost_pass" href="#">forget password?</a>
                                     </div>
                                 </form>
