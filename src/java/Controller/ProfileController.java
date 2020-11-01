@@ -36,7 +36,7 @@ public class ProfileController extends BaseAuthController {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         Account account = dao.getAccountByID(username);
-        request.setAttribute("acc", account);
+        request.setAttribute("account", account);
         request.getRequestDispatcher("Profile.jsp").forward(request, response);
     }
 
@@ -59,9 +59,7 @@ public class ProfileController extends BaseAuthController {
         Account account = new Account(username, dao.getPassword(username) ,fullname, email, phonenumber, address);
         boolean isUpdated = dao.updateAccount(account);
         if(isUpdated) {
-            response.sendRedirect("profile");
-        } else {
-            response.getWriter().println(dao.getPassword(username));
+            processGet(request, response);
         }
     }
 

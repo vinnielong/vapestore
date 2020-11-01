@@ -28,7 +28,7 @@
         <!-- slider Area End-->
 
         <%
-            Account acc = (Account) request.getAttribute("acc");
+            Account acc = (Account) request.getAttribute("account");
         %>
         <div class="container" style="padding: 50px;">
             <div class="col-lg-8 col-md-8">
@@ -44,7 +44,7 @@
                     </div><br>
                     E-mail:
                     <div class="mt-10">
-                        <input type="email" name="EMAIL" value="<%=acc.getEmail()%>" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" class="single-input">
+                        <input type="email" name="email" value="<%=acc.getEmail()%>" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" class="single-input">
                     </div><br>
                     Address:
                     <div class="mt-10">
@@ -52,7 +52,7 @@
                     </div><br>
                     Phone Number:
                     <div class="mt-10">
-                        <input type="text" name="phone_num" value="<%=acc.getPhonenumber()%>" placeholder="Phone Num" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Num'" required="" class="single-input">
+                        <input type="text" name="phonenumber" value="<%=acc.getPhonenumber()%>" placeholder="Phone Num" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Num'" required="" class="single-input">
                     </div><br>                   
                     <a href="reset" class="genric-btn primary e-large" style="float: left; background-color: #4cd3e3;">Reset Password</a>
                     <button type="submit" value="submit" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3;">Save</button>

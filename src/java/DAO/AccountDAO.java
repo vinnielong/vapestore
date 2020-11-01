@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class AccountDAO extends BaseDAO {
 
-    public Account getAccount(String username, String password) {
+    public Account Login(String username, String password) {
         Account account = null;
         try {
             String sql = "SELECT * FROM dbo.Account WHERE username = ? AND password = ?";

@@ -79,25 +79,39 @@
                             </div>
                         </div> 
                         <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
-                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                            <ul class="header-right f-left d-none d-lg-block d-flex justify-content-between">
                                 <li class="d-none d-xl-block">
-                                    <div class="form-box f-right ">
+                                    <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
                                         <input type="text" name="Search" placeholder="Search products">
                                         <div class="search-icon">
                                             <i class="fas fa-search special-tag"></i>
                                         </div>
                                     </div>
                                 </li>
-                                <%if (account != null) {%>
-                                <li class="d-none d-lg-block"> <a href="logout" class="btn header-btn">Logout</a></li>
-                                <%} else {%>
-                                <li class="d-none d-lg-block"> <a href="login" class="btn header-btn">Sign in</a></li>
-                                <%}%>
                             </ul>
+                            <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
+                                <%if (account != null) {%>
+                                <nav>
+                                    <ul id="navigation">
+                                        <li> 
+                                            <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
+                                            <ul class="submenu">
+                                                <li><a href="profile">My Profile</a></li>
+                                                <li><a href="Cart.jsp">Cart</a></li>
+                                                <li><a href="Checkout.jsp">Checkout</a></li>
+                                                <li><a href="logout"> Logout</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <%} else {%>
+                            <li class="d-none d-lg-block"> <a href="login" class="btn header-btn">Sign in</a></li>
+                                <%}%>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
+                            <div class="mobile_menu f-right d-block d-lg-none"></div>
                         </div>
                     </div>
                 </div>

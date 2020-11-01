@@ -49,7 +49,7 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("name");
         String password = request.getParameter("password");
         AccountDAO dao = new AccountDAO();
-        Account account = dao.getAccount(username, password);       
+        Account account = dao.Login(username, password);       
         if (account != null) {
             request.getSession().setAttribute("account", account);
             response.sendRedirect("home");
