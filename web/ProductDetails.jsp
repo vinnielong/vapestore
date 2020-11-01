@@ -7,9 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="head.jsp"%>
+    <%@include file="components/head.jsp"%>
     <body>
-        <%@include file="header.jsp"%>
+        <%@include file="components/header.jsp"%>
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/category.jpg">
@@ -32,12 +32,6 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="product_img_slide owl-carousel">
-                            <div class="single_product_img">
-                                <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-                            </div>
-                            <div class="single_product_img">
-                                <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-                            </div>
                             <div class="single_product_img">
                                 <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
                             </div>
@@ -88,7 +82,7 @@
             </div>
         </section>
         <!-- subscribe part end -->
-        <%@include file="footer.jsp"%>
-        <%@include file="script.jsp"%>
+        <%@include file="components/footer.jsp"%>
+        <%@include file="components/script.jsp"%>
     </body>
 </html>

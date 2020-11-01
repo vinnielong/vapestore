@@ -7,10 +7,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
-    <%@include file="head.jsp"%>
+    <%@include file="components/head.jsp"%>
     <body>
-        <%@include file="header.jsp"%>
-
+        <!-- Preloader Start -->
+        <div id="preloader-active">
+            <div class="preloader d-flex align-items-center justify-content-center">
+                <div class="preloader-inner position-relative">
+                    <div class="preloader-circle"></div>
+                    <div class="preloader-img pere-text">
+                        <img src="assets/img/logo/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader End -->
+        <%@include file="components/header.jsp"%>
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
@@ -113,7 +124,7 @@
         </section>
         <!-- subscribe part end -->
 
-        <%@include file="footer.jsp"%>
-        <%@include file="script.jsp"%>
+        <%@include file="components/footer.jsp"%>
+        <%@include file="components/script.jsp"%>
     </body>
 </html>

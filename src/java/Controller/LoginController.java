@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.AccountDAO;
+import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -30,7 +32,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("../Login.jsp").forward(request, response);
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
 
     /**
@@ -44,7 +46,17 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String username = request.getParameter("name");
+        String password = request.getParameter("password");
+        AccountDAO dao = new AccountDAO();
+        Account account = dao.getAccount(username, password);       
+        if (account != null) {
+            request.getSession().setAttribute("account", account);
+            response.sendRedirect("home");
+        } else {
+            request.setAttribute("errorMsg", "Username / Password Incorrect!");
+            doGet(request, response);
+        }
     }
 
     /**

@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Vinnie Long
@@ -13,14 +15,22 @@ public class Account {
     
     private String username;
     private String password;
+    private String email;
+    private String phonenumber;
+    private String address;
+    private ArrayList<Product> products = new ArrayList<>();
 
     public Account() {
     }
 
-    public Account(String username, String password) {
+    public Account(String username, String password, String email, String phonenumber, String address) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.phonenumber = phonenumber;
+        this.address = address;
     }
+   
 
     public String getUsername() {
         return username;
@@ -36,6 +46,38 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
     
     

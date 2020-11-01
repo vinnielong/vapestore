@@ -5,26 +5,18 @@
  */
 package Controller;
 
-import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Vinnie Long
  */
-public abstract class BaseAuthController extends HttpServlet {
-    
-    private boolean isAccessGranted(HttpServletRequest request) throws ServletException, IOException{
-        HttpSession session = request.getSession();
-        Account account = (Account) session.getAttribute("account");
-        return account != null;
-    }
+public class RegisterController extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -38,17 +30,8 @@ public abstract class BaseAuthController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (isAccessGranted(request)) {
-            processGet(request, response);
-        } else {
-            request.getRequestDispatcher("login").forward(request, response);
-        }
+        request.getRequestDispatcher("Register.jsp").forward(request, response);
     }
-    
-    protected abstract void processGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException ;
-        
-    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -61,17 +44,8 @@ public abstract class BaseAuthController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (isAccessGranted(request)) {
-            processPost(request, response);
-        } else {
-            request.getRequestDispatcher("login").forward(request, response);
-        }
-    }
-    
-    protected abstract void processPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException ;
         
-    
+    }
 
     /**
      * Returns a short description of the servlet.

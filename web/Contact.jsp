@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@include file="head.jsp"%>
+<%@include file="components/head.jsp"%>
 <body>
     <!-- Preloader Start -->
     <div id="preloader-active">
@@ -19,9 +19,9 @@
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
+    <!-- Preloader End -->
 
-    <%@include file="header.jsp"%>
+    <%@include file="components/header.jsp"%>
 
     <!-- slider Area Start-->
     <div class="slider-area ">
@@ -145,35 +145,10 @@
         </div>
     </section>
     <!-- ================ contact section end ================= -->
+    
 
-    <!-- Gallery Start-->
-    <div class="gallery-wrapper lf-padding">
-        <div class="gallery-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery1.jpg" alt="">
-                    </div> 
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery2.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery3.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery4.jpg" alt="">
-                    </div>
-                    <div class="gallery-items">
-                        <img src="assets/img/gallery/gallery5.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Gallery End-->
-
-    <%@include file="footer.jsp"%>
-    <%@include file="script.jsp"%>
+    <%@include file="components/footer.jsp"%>
+    <%@include file="components/script.jsp"%>
 </body>
 
 </html>

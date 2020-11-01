@@ -7,9 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
-    <%@include file="head.jsp"%>
+    <%@include file="components/head.jsp"%>
     <body>
-        <%@include file="header.jsp"%>
+        <%@include file="components/header.jsp"%>
 
         <!-- slider Area Start-->
         <div class="slider-area ">
@@ -226,7 +226,7 @@
         </section>
         <!--================End Checkout Area =================-->
 
-        <%@include file="footer.jsp"%>
-        <%@include file="script.jsp"%>
+        <%@include file="components/footer.jsp"%>
+        <%@include file="components/script.jsp"%>
     </body>
 </html>

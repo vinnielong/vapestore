@@ -7,10 +7,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%@include file="head.jsp"%>
+    <%@include file="components/head.jsp"%>
     <body>
-        <%@include file="header.jsp"%>
-
+        <!-- Preloader Start -->
+        <div id="preloader-active">
+            <div class="preloader d-flex align-items-center justify-content-center">
+                <div class="preloader-inner position-relative">
+                    <div class="preloader-circle"></div>
+                    <div class="preloader-img pere-text">
+                        <img src="assets/img/logo/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader End -->
+        <%@include file="components/header.jsp"%>
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
@@ -58,7 +69,7 @@
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_item">
                                         <img src="assets/img/categories/product6.png" alt="" class="img-fluid">
-                                        <h3> <a href="single-product.html">Cervical pillow for airplane
+                                        <h3> <a href="ProductDetails.jsp">Cervical pillow for airplane
                                                 car office nap pillow</a> </h3>
                                         <p>From $5</p>
                                     </div>
@@ -123,7 +134,7 @@
             </div>
         </section>
         <!-- subscribe part end -->
-        <%@include file="footer.jsp"%>
-        <%@include file="script.jsp"%>
+        <%@include file="components/footer.jsp"%>
+        <%@include file="components/script.jsp"%>
     </body>
 </html>

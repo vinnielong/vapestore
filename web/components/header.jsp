@@ -1,10 +1,11 @@
+<%@page import="Model.Account"%>
 <header>
     <!-- Header Start -->
     <script>
-    function setImage(select) {
-        var image = document.getElementsByName("image-swap")[0];
-        image.src = select.options[select.selectedIndex].value;
-    }
+        function setImage(select) {
+            var image = document.getElementsByName("image-swap")[0];
+            image.src = select.options[select.selectedIndex].value;
+        }
     </script>
 
     <div class="header-area">
@@ -31,13 +32,25 @@
                                     <li>+84 934 578864</li>
                                 </ul>
                             </div>
+                            <%
+                                Account account = (Account) session.getAttribute("account");
+                                if (account != null) {
+                            %>
                             <div class="header-info-right">
                                 <ul>                                          
-                                    <li><a href="Login.jsp">My Account </a></li>
+                                    <li><a href="Profile.jsp">My Account </a></li>
                                     <li><a href="Cart.jsp">Cart</a></li>
                                     <li><a href="Checkout.jsp">Checkout</a></li>
                                 </ul>
                             </div>
+                            <%} else {%>
+                            <div class="header-info-right">
+                                <ul>                                       
+                                    <li><a href="Cart.jsp">Cart</a></li>
+                                    <li><a href="Checkout.jsp">Checkout</a></li>
+                                </ul>
+                            </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>
@@ -48,7 +61,7 @@
                         <!-- Logo -->
                         <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                             <div class="logo">
-                                <a href="Home.jsp"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="home"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -56,10 +69,11 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>                                                
                                     <ul id="navigation">                                                                                                                                     
-                                        <li><a href="Home.jsp">Home</a></li>
+                                        <li><a href="home">Home</a></li>
                                         <li><a href="Products.jsp">Shop</a></li>    
-                                        <li><a href="Contact.jsp">Contact</a></li>
-                                        <li><a href="About.jsp">About</a></li>
+                                        <li><a href="contact">Contact</a></li>
+                                        <li><a href="about">About</a></li>
+                                        <!--<li><a href="login">Login</a></li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -74,7 +88,11 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="d-none d-lg-block"> <a href="Login.jsp" class="btn header-btn">Sign in</a></li>
+                                <%if (account != null) {%>
+                                <li class="d-none d-lg-block"> <a href="logout" class="btn header-btn">Logout</a></li>
+                                <%} else {%>
+                                <li class="d-none d-lg-block"> <a href="login" class="btn header-btn">Sign in</a></li>
+                                <%}%>
                             </ul>
                         </div>
                         <!-- Mobile Menu -->

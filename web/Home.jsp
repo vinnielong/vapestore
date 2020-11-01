@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-    <%@include file="head.jsp"%>
+    <%@include file="components/head.jsp"%>
     <body>
         <!-- Preloader Start -->
         <div id="preloader-active">
@@ -20,8 +20,8 @@
                 </div>
             </div>
         </div>
-        <!-- Preloader Start -->
-        <%@include file="header.jsp"%>
+        <!-- Preloader End -->
+        <%@include file="components/header.jsp"%>
         <main>
             <!-- slider Area Start -->
             <div class="slider-area ">
@@ -42,7 +42,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Vape Of 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="Categories.jsp" class="btn hero-btn">Shop Now</a>
+                                            <a href="Products.jsp" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="Categories.jsp" class="btn hero-btn">Shop Now</a>
+                                            <a href="Products.jsp" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -677,7 +677,7 @@
                 </div>
             </div>
         </main>
-        <%@include file="footer.jsp"%>
-        <%@include file="script.jsp"%>
+        <%@include file="components/footer.jsp"%>
+        <%@include file="components/script.jsp"%>
     </body>
 </html>
