@@ -32,25 +32,12 @@
                                     <li>+84 934 578864</li>
                                 </ul>
                             </div>
-                            <%
-                                Account account = (Account) session.getAttribute("account");
-                                if (account != null) {
-                            %>
-                            <div class="header-info-right">
-                                <ul>                                          
-                                    <li><a href="profile?username=<%=account.getUsername()%>">My Account </a></li>
-                                    <li><a href="Cart.jsp">Cart</a></li>
-                                    <li><a href="Checkout.jsp">Checkout</a></li>
-                                </ul>
-                            </div>
-                            <%} else {%>
                             <div class="header-info-right">
                                 <ul>                                       
                                     <li><a href="Cart.jsp">Cart</a></li>
                                     <li><a href="Checkout.jsp">Checkout</a></li>
                                 </ul>
                             </div>
-                            <%}%>
                         </div>
                     </div>
                 </div>
@@ -90,13 +77,16 @@
                                 </li>
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
-                                <%if (account != null) {%>
+                                <%
+                                    Account account = (Account) session.getAttribute("account");
+                                    if (account != null) {
+                                %>
                                 <nav>
                                     <ul id="navigation">
                                         <li> 
                                             <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
-                                            <ul class="submenu">
-                                                <li><a href="profile">My Profile</a></li>
+                                            <ul class="submenu" style="left: -13px;">
+                                                <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
                                                 <li><a href="Cart.jsp">Cart</a></li>
                                                 <li><a href="Checkout.jsp">Checkout</a></li>
                                                 <li><a href="logout"> Logout</a></li>
