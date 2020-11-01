@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class ProductDAO extends BaseDAO {
 
-    public ArrayList<Product> getProduct() {
+    public ArrayList<Product> getAllProducts() {
         ArrayList<Product> products = new ArrayList<>();
         try {
             String sql = "SELECT * FROM dbo.Products";
@@ -29,7 +29,7 @@ public class ProductDAO extends BaseDAO {
                 Product product = new Product();
                 product.setId(rs.getInt("productID"));
                 product.setName(rs.getString("productName"));
-                product.setPrice(rs.getFloat("price"));
+                product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setDetail(rs.getString("detail"));
                 product.setImage(rs.getString("image"));
@@ -41,17 +41,18 @@ public class ProductDAO extends BaseDAO {
         return products;
     }
     
-    public Product getProductByID() {
+    public Product getProductByID(int id) {
         Product product = null;
         try {
             String sql = "SELECT * FROM dbo.Products WHERE productID = ?";
             PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {   
                 product = new Product();
                 product.setId(rs.getInt("productID"));
                 product.setName(rs.getString("productName"));
-                product.setPrice(rs.getFloat("price"));
+                product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setDetail(rs.getString("detail"));
                 product.setImage(rs.getString("image"));                
@@ -60,5 +61,27 @@ public class ProductDAO extends BaseDAO {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return product;
+    }
+    
+    public ArrayList<Product> getProductsByCategory(int categoryID) {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM dbo.Products WHERE categoryID = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("productID"));
+                product.setName(rs.getString("productName"));
+                product.setPrice(rs.getInt("price"));
+                product.setCategoryID(rs.getInt("categoryID"));
+                product.setDetail(rs.getString("detail"));
+                product.setImage(rs.getString("image"));
+                products.add(product);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
     }
 }

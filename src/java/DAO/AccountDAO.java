@@ -113,4 +113,18 @@ public class AccountDAO extends BaseDAO {
         }
         return password;
     }
+    
+    public boolean resetPassword(String username, String password) {
+        boolean isReset = false;
+        try {
+            String sql = "UPDATE dbo.Account SET password = ? WHERE username = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, password);
+            st.setString(1, username);
+            isReset = st.executeUpdate() > 0;            
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return isReset;
+    }
 }

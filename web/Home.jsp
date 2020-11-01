@@ -42,7 +42,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Vape Of 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="Products.jsp" class="btn hero-btn">Shop Now</a>
+                                            <a href="products" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -653,7 +653,7 @@
                                 <div class="best-product-caption">
                                     <h2 style="padding-left: 140px;">Find The Best Product<br> from Our Shop</h2>
                                     <p style="padding-left: 140px;">Customers who are interested creating state of the.</p>
-                                    <a href="Products.jsp" class="black-btn" style="margin-left: 140px">Shop Now</a>
+                                    <a href="products" class="black-btn" style="margin-left: 140px">Shop Now</a>
                                 </div>
                             </div>
                         </div>

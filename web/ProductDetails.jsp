@@ -44,8 +44,8 @@
                             <p>
                                 Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
                             </p>
-                            <div class="card_area">
-                                <div class="product_count_area">
+                            <div class="card_area" style="margin-left: -14px;">
+                                <div class="product_count_area" style="margin-left: -47px;">
                                     <p>Quantity</p>
                                     <div class="product_count d-inline-block">
                                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
