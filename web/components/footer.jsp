@@ -34,11 +34,11 @@
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                     <div class="single-footer-caption mb-50">
                         <div class="footer-tittle">
-                            <h4>New Products</h4>
+                            <h4>Products</h4>
                             <ul>
-                                <li><a href="#">Devices</a></li>
-                                <li><a href="#">Salt-Nic E-Liquids</a></li>
-                                <li><a href="#">Freebase E-Liquids</a></li>
+                                <li><a href="category?catID=3">Devices</a></li>
+                                <li><a href="category?catID=2">Salt-Nic E-Liquids</a></li>
+                                <li><a href="category?catID=1">Freebase E-Liquids</a></li>
                                 <li><a href="#">Acessories</a></li>
                             </ul>
                         </div>

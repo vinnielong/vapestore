@@ -60,9 +60,9 @@
                                     <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                                     <div class="select_option_dropdown">
                                         <p><a href="product">All</a></p>
-                                        <p name="catID"><a href="category?catID=1">Freebase Juice</a></p>
-                                        <p name="catID"><a href="category?catID=2">Salt-Nicotine Juice</a></p>
-                                        <p name="catID"><a href="category?catID=3">Devices</a></p>
+                                        <p><a href="category?catID=1">Freebase Juice</a></p>
+                                        <p><a href="category?catID=2">Salt-Nicotine Juice</a></p>
+                                        <p><a href="category?catID=3">Devices</a></p>
                                     </div>
                                 </div>
                             </div>
