@@ -31,7 +31,14 @@
                                 <ul class="contact-now">     
                                     <li>+84 934 578864</li>
                                 </ul>
-                            </div>                            
+                            </div>   
+                            <div class="header-info-right">
+                                <ul>                                          
+                                    <li><a href="#"><img src=""></a></li>
+                                    <li><a href="#"><img src=""></a></li>
+                                    <li><a href="#"><img src=""></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

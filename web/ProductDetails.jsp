@@ -44,7 +44,7 @@
                     <div class="col-lg-8">
                         <div class="single_product_text text-center">
                             <h3><%=p.getName()%></h3>
-                            <!--<input type="text" class="form-control"  name="id" readonly="" value="<%=p.getId()%>" style="text-align: center;">--> 
+                            <input type="text" class="form-control"  name="id" readonly="" value="<%=p.getId()%>" style="text-align: center;"> 
                             <p><%=p.getDetail()%></p>
                             <p>Price: <%=p.getPrice()%> đ</p>
                             <div class="card_area" style="margin-left: -14px;">

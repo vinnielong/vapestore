@@ -68,6 +68,7 @@ public class ProductDAO extends BaseDAO {
         try {
             String sql = "SELECT * FROM dbo.Products WHERE categoryID = ?";
             PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, categoryID);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Product product = new Product();

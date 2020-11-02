@@ -40,7 +40,9 @@
             </div>
         </div>
         <!-- slider Area End-->
-
+        <%
+            ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
+        %>
         <!-- product list part start-->
         <section class="product_list section_padding">
             <div class="container">
@@ -57,10 +59,10 @@
                                 <div class="select_option">
                                     <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                                     <div class="select_option_dropdown">
-                                        <p><a href="#">All</a></p>
-                                        <p><a href="#">Salt-Nicotine Juice</a></p>
-                                        <p><a href="#">Freebase Juice</a></p>
-                                        <p><a href="#">Devices</a></p>
+                                        <p><a href="product">All</a></p>
+                                        <p name="catID"><a href="category?catID=1">Salt-Nicotine Juice</a></p>
+                                        <p name="catID"><a href="category?catID=2">Freebase Juice</a></p>
+                                        <p name="catID"><a href="category?catID=3">Devices</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -70,11 +72,10 @@
                         <div class="product_list">
                             <div class="row">
                                 <%
-                                    ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
                                     if (prod != null && !prod.isEmpty()) {
                                         for (Product p : prod) {
                                 %>
-                                <div class="col-lg-6 col-sm-6">
+                                <div class="col-lg-6 col-sm-6" >
                                     <div class="single_product_item" style="text-align: center;">
                                         <img src="<%=p.getImage()%>" alt="" class="img-fluid">
                                         <h3> <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%></a> </h3>
@@ -83,7 +84,7 @@
                                 </div>
                                 <%}%>
                                 <%}%>
-                            </div>
+                            </div><br>
                             <div class="load_more_btn text-center">
                                 <a href="#" class="btn_3">Load More</a>
                             </div>
