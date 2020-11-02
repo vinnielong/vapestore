@@ -36,8 +36,8 @@
                         <div class="flexslider">
                             <ul class="slides">
                                 
-                                <li data-thumb="assets/img/categories/product2.jpg">
-                                    <img src="assets/img/categories/product2.jpg" class="w-100" />
+                                <li data-thumb="<%=p.getImage()%>">
+                                    <img src="<%=p.getImage()%>" class="w-100" />
                                 </li>
                             </ul>
                         </div>
@@ -47,8 +47,8 @@
                             <h1><%=p.getName()%></h1>
                             <h2><%=p.getPrice()%>đ</h2>
                             <p><%=p.getShortdesc()%></p>
-                            <span>Brand:</span>
-                            <span>Stock: <%=p.getStock()%></span>
+                            <p>Origin:</p>
+                            <p>Stock: <%=p.getStock()%></p>
                             <div class="card_area"ss>
                                 <div class="product_count_area">
                                     <p style="padding-top: 12px;">Quantity:</p>

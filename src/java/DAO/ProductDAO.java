@@ -32,8 +32,9 @@ public class ProductDAO extends BaseDAO {
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("desc"));
+                product.setDescription(rs.getString("spec"));
                 product.setStock(rs.getString("stock"));               
+                product.setImage(rs.getString("img"));               
                 products.add(product);
             }
         } catch (SQLException ex) {
@@ -56,7 +57,7 @@ public class ProductDAO extends BaseDAO {
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("desc"));  
+                product.setDescription(rs.getString("spec"));  
                 product.setStock(rs.getString("stock")); 
             }
         } catch (SQLException ex) {
@@ -79,8 +80,9 @@ public class ProductDAO extends BaseDAO {
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("desc"));
+                product.setDescription(rs.getString("spec"));
                 product.setStock(rs.getString("stock")); 
+                product.setImage(rs.getString("img"));
                 products.add(product);
             }
         } catch (SQLException ex) {
