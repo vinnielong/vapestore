@@ -26,7 +26,15 @@
             </div>
         </div>
         <%
+            String category = "";
             Product p = (Product) request.getAttribute("product");
+            if(p.getCategoryID() == 1){ 
+                category = "Freebase Juice";
+            } else if (p.getCategoryID() == 2) {
+                category = "Salt-Nicotine Juice";
+            } else {
+                category = "Device";
+            }
         %>
         <section class="product_list section_padding" style="padding: 100px">
             <div class="container">
@@ -46,6 +54,7 @@
                             <h1><%=p.getName()%></h1>
                             <h2><%=p.getPrice()%>đ</h2>
                             <p><%=p.getShortdesc()%></p>
+                            <p>Category: <%=category%></p>
                             <p>Origin:</p>
                             <p>Stock: <%=p.getStock()%></p>
                             <div class="card_area"ss>
