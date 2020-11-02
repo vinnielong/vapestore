@@ -34,8 +34,7 @@
                     <div class="col-lg-6">
                         <!-- Place somewhere in the <body> of your page -->
                         <div class="flexslider">
-                            <ul class="slides">
-                                
+                            <ul class="slides">                               
                                 <li data-thumb="<%=p.getImage()%>">
                                     <img src="<%=p.getImage()%>" class="w-100" />
                                 </li>
