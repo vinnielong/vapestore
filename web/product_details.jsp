@@ -4,7 +4,6 @@
     Author     : Vinnie Long
 --%>
 
-<%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,23 +34,29 @@
                         <!-- Place somewhere in the <body> of your page -->
                         <div class="flexslider">
                             <ul class="slides">
-                                
+                                <li data-thumb="assets/img/categories/product1.jpg">
+                                    <img src="assets/img/categories/product1.jpg" class="w-100" />
+                                </li>
                                 <li data-thumb="assets/img/categories/product2.jpg">
                                     <img src="assets/img/categories/product2.jpg" class="w-100" />
+                                </li>
+                                <li data-thumb="assets/img/categories/product3.jpg">
+                                    <img src="assets/img/categories/product3.jpg" class="w-100" />
+                                </li>
+                                <li data-thumb="assets/img/categories/product4.jpg">
+                                    <img src="assets/img/categories/product4.jpg" class="w-100" />
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding-top: 65px;">
                         <div class="single_product_text">
-                            <h1><%=p.getName()%></h1>
-                            <h2><%=p.getPrice()%>đ</h2>
-                            <p><%=p.getShortdesc()%></p>
-                            <span>Brand:</span>
-                            <span>Stock: <%=p.getStock()%></span>
+                            <h1>LICORNE BY CURIEUX (60ML)</h1>
+                            <h2>$ 24.99</h2>
+                            <p>Licorne is a unique and surprising combination of strawberry and dragon fruit flavors</p>
                             <div class="card_area"ss>
                                 <div class="product_count_area">
-                                    <p style="padding-top: 12px;">Quantity:</p>
+                                <p>Quantity:</p>
                                     <div class="product_count d-inline-block">
                                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
                                         <input class="product_count_item input-number" type="text" value="1" min="0" max="100">
@@ -64,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12"><%=p.getDescription()%></div>
+                    <div class="col-lg-12">test</div>
                 </div>
             </div>
         </section>

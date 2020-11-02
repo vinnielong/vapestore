@@ -8976,12 +8976,17 @@ del {
 .card_area {
   margin-top: 60px;
 }
-
+.single_product_text h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fd8f5f;
+    margin-bottom: 15px;
+}
 /* line 164, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_single_product.scss */
 .card_area .product_count_area {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* line 168, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_single_product.scss */

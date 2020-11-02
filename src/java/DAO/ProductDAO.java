@@ -31,8 +31,9 @@ public class ProductDAO extends BaseDAO {
                 product.setName(rs.getString("productName"));
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
-                product.setDetail(rs.getString("detail"));
-                product.setImage(rs.getString("image"));
+                product.setShortdesc(rs.getString("detail"));
+                product.setDescription(rs.getString("desc"));
+                product.setStock(rs.getString("stock"));               
                 products.add(product);
             }
         } catch (SQLException ex) {
@@ -54,8 +55,9 @@ public class ProductDAO extends BaseDAO {
                 product.setName(rs.getString("productName"));
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
-                product.setDetail(rs.getString("detail"));
-                product.setImage(rs.getString("image"));                
+                product.setShortdesc(rs.getString("detail"));
+                product.setDescription(rs.getString("desc"));  
+                product.setStock(rs.getString("stock")); 
             }
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -76,8 +78,9 @@ public class ProductDAO extends BaseDAO {
                 product.setName(rs.getString("productName"));
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
-                product.setDetail(rs.getString("detail"));
-                product.setImage(rs.getString("image"));
+                product.setShortdesc(rs.getString("detail"));
+                product.setDescription(rs.getString("desc"));
+                product.setStock(rs.getString("stock")); 
                 products.add(product);
             }
         } catch (SQLException ex) {

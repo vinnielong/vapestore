@@ -89,7 +89,7 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="single-category mb-30">
                                 <div class="category-img">
-                                    <a href="Products.jsp">
+                                    <a href="category?catID=1">
                                         <img src="assets/img/categories/cat1.jpg" alt="">
                                     </a>
                                 </div>
@@ -98,7 +98,7 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="single-category mb-30">
                                 <div class="category-img text-center">
-                                    <a href="Products.jsp">
+                                    <a href="category?catID=2">
                                         <img src="assets/img/categories/cat2.jpg" alt="">      
                                     </a>
                                 </div>
@@ -107,7 +107,7 @@
                         <div class="col-xl-4 col-lg-6">
                             <div class="single-category mb-30">
                                 <div class="category-img">
-                                    <a href="Products.jsp">
+                                    <a href="category?catID=3">
                                         <img src="assets/img/categories/cat3.jpg" alt="">
                                     </a>
                                 </div>
