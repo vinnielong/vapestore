@@ -78,7 +78,7 @@
                                     <div class="single_product_item" style="text-align: center;">
                                         <img src="<%=p.getImage()%>" alt="" class="img-fluid">
                                         <h3> <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%></a> </h3>
-                                        <p><%=p.getPrice()%>đ</p>
+                                        <p><%=p.getPrice()%> đ</p>
                                     </div>
                                 </div>
                                 <%}%>

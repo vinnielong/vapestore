@@ -5,8 +5,11 @@
  */
 package Controller;
 
+import Model.Account;
+import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +23,10 @@ public class CartController extends BaseAuthController {
 
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Account account = 
+        Account acc = (Account) request.getSession().getAttribute("account");
+        ArrayList<Product> products = acc.getProducts();
+        request.setAttribute("products", products);
+        request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
     @Override

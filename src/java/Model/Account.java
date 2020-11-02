@@ -56,9 +56,7 @@ public class Account {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
-    }
-
-    
+    }   
     
     public String getEmail() {
         return email;

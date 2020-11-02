@@ -31,13 +31,7 @@
                                 <ul class="contact-now">     
                                     <li>+84 934 578864</li>
                                 </ul>
-                            </div>
-                            <div class="header-info-right">
-                                <ul>                                       
-                                    <li><a href="Cart.jsp">Cart</a></li>
-                                    <li><a href="Checkout.jsp">Checkout</a></li>
-                                </ul>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>

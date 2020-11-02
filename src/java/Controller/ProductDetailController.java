@@ -5,8 +5,12 @@
  */
 package Controller;
 
+import DAO.ProductDAO;
+import Model.Account;
+import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +34,25 @@ public class ProductDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        ProductDAO dao = new ProductDAO();
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = dao.getProductByID(id);
+        Account acc = (Account) request.getSession().getAttribute("account");
+        ArrayList<Product> products = acc.getProducts();
+        boolean isExisted = false;
+        for (Product p : products) {
+            if (p.getId() == id) {
+                p.setQuantity(p.getQuantity() + 1);
+                isExisted = true;
+                break;
+            }
+        }
+        if (!isExisted) {           
+            product.setQuantity(product.getQuantity() + 1);
+            products.add(product);
+        }
+        request.setAttribute("product", product);
+        request.getRequestDispatcher("ProductDetails.jsp").forward(request, response);
     }
 
     /**
@@ -42,7 +64,7 @@ public class ProductDetailController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
     }
@@ -53,7 +75,7 @@ public class ProductDetailController extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

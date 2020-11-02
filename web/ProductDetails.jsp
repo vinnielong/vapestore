@@ -4,6 +4,7 @@
     Author     : Vinnie Long
 --%>
 
+<%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,35 +28,36 @@
         <!-- slider Area End-->
 
         <!--================Single Product Area =================-->
+        <%
+            Product p = (Product) request.getAttribute("product");
+        %>
         <div class="product_image_area">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="product_img_slide owl-carousel">
                             <div class="single_product_img">
-                                <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
+                                <img src="<%=p.getImage()%>" alt="#" class="w-100" >
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="single_product_text text-center">
-                            <h3>Foam filling cotton slow <br>
-                                rebound pillows</h3>
-                            <p>
-                                Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-                            </p>
+                            <h3><%=p.getName()%></h3>
+                            <!--<input type="text" class="form-control"  name="id" readonly="" value="<%=p.getId()%>" style="text-align: center;">--> 
+                            <p><%=p.getDetail()%></p>
+                            <p>Price: <%=p.getPrice()%> đ</p>
                             <div class="card_area" style="margin-left: -14px;">
-                                <div class="product_count_area" style="margin-left: -47px;">
-                                    <p>Quantity</p>
+                                <p>Quantity</p>
+                                <div class="product_count_area">
                                     <div class="product_count d-inline-block">
                                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                                        <input class="product_count_item input-number" type="text" value="1" min="0" max="100">
                                         <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                     </div>
-                                    <p>$5</p>
                                 </div>
                                 <div class="add_to_cart">
-                                    <a href="#" class="btn_3">add to cart</a>
+                                    <a href="productdetail?id=<%=p.getId()%>" class="btn_3">add to cart</a>
                                 </div>
                             </div>
                         </div>
