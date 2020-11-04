@@ -40,9 +40,7 @@
             </div>
         </div>
         <!-- slider Area End-->
-        <%
-            ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
-        %>
+
         <!-- product list part start-->
         <section class="product_list section_padding">
             <div class="container">
@@ -71,7 +69,11 @@
                     <div class="col-md-8">
                         <div class="product_list">
                             <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="pagination"></ul>
+                                </div>
                                 <%
+                                    ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
                                     if (prod != null && !prod.isEmpty()) {
                                         for (Product p : prod) {
                                 %>
@@ -85,8 +87,8 @@
                                 <%}%>
                                 <%}%>
                             </div><br>
-                            <div class="load_more_btn text-center">
-                                <a href="#" class="btn_3">Load More</a>
+                            <div class="col-lg-12">
+                                <ul class="pagination"></ul>
                             </div>
                         </div>
                     </div>
@@ -146,5 +148,9 @@
         <!-- subscribe part end -->
         <%@include file="components/footer.jsp"%>
         <%@include file="components/script.jsp"%>
+        <script src="assets/js/pagger.js"></script>
+        <script>
+            paggerBasic('pagination', ${requestScope.pageIndex}, ${requestScope.totalPages}, 2);
+        </script>
     </body>
 </html>

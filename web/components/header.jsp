@@ -1,3 +1,6 @@
+<%@page import="sun.java2d.pipe.hw.AccelDeviceEventListener"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Product"%>
 <%@page import="Model.Account"%>
 <header>
     <!-- Header Start -->
@@ -79,6 +82,7 @@
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
                                 <%
+                                    
                                     Account account = (Account) session.getAttribute("account");
                                     if (account != null) {
                                 %>

@@ -22,6 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ProductDetailController extends HttpServlet {
 
+    ProductDAO dao = new ProductDAO();
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -34,24 +36,12 @@ public class ProductDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDAO dao = new ProductDAO();
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = dao.getProductByID(id);
-//        Account acc = (Account) request.getSession().getAttribute("account");
-//        ArrayList<Product> products = acc.getProducts();
-//        boolean isExisted = false;
-//        for (Product p : products) {
-//            if (p.getId() == id) {
-//                p.setQuantity(p.getQuantity() + 1);
-//                isExisted = true;
-//                break;
-//            }
-//        }
-//        if (!isExisted) {           
-//            product.setQuantity(product.getQuantity() + 1);
-//            products.add(product);
-//        }
+        ArrayList<String> image = dao.getProductImage(id);
+        request.setAttribute("id", id);
         request.setAttribute("product", product);
+        request.setAttribute("image", image);
         request.getRequestDispatcher("ProductDetails.jsp").forward(request, response);
     }
 
@@ -64,9 +54,25 @@ public class ProductDetailController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = dao.getProductByID(id);
+        Account account = (Account) request.getSession().getAttribute("account");
+        ArrayList<Product> products = account.getProducts();
+        boolean isExisted = false;
+        for (Product p : products) {
+            if (p.getId() == id) {
+                p.setQuantity(p.getQuantity() + 1);
+                isExisted = true;
+                break;
+            }
+        }
+        if (!isExisted) {
+            product.setQuantity(product.getQuantity() + 1);
+            products.add(product);
+        }
+        doGet(request, response);
     }
 
     /**
@@ -75,7 +81,7 @@ public class ProductDetailController extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

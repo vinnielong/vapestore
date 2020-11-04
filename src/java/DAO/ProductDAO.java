@@ -19,22 +19,22 @@ import java.util.logging.Logger;
  */
 public class ProductDAO extends BaseDAO {
 
-    public ArrayList<Product> getAllProducts() {
+    public ArrayList<Product> getAllProducts(int pageIndex, int pageSize) {
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM dbo.Products";
+            String sql = "WITH r AS (SELECT ROW_NUMBER() OVER (ORDER BY productID DESC) rownum, productID, productName, price, img FROM dbo.Products) SELECT * FROM r WHERE r.rownum >= (? - 1) * ? + 1 AND r.rownum <= ? * ?";
             PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, pageIndex);
+            st.setInt(2, pageSize);
+            st.setInt(3, pageSize);
+            st.setInt(4, pageIndex);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Product product = new Product();
                 product.setId(rs.getInt("productID"));
                 product.setName(rs.getString("productName"));
                 product.setPrice(rs.getInt("price"));
-                product.setCategoryID(rs.getInt("categoryID"));
-                product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("spec"));
-                product.setStock(rs.getString("stock"));               
-                product.setImage(rs.getString("img"));               
+                product.setImage(rs.getString("img"));
                 products.add(product);
             }
         } catch (SQLException ex) {
@@ -42,7 +42,22 @@ public class ProductDAO extends BaseDAO {
         }
         return products;
     }
-    
+
+    public int getTotalProducts() {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) total FROM dbo.Products";
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("total");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+
     public Product getProductByID(int id) {
         Product product = null;
         try {
@@ -50,22 +65,23 @@ public class ProductDAO extends BaseDAO {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
-            while (rs.next()) {   
+            while (rs.next()) {
                 product = new Product();
                 product.setId(rs.getInt("productID"));
                 product.setName(rs.getString("productName"));
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("spec"));  
-                product.setStock(rs.getString("stock")); 
+                product.setDescription(rs.getString("spec"));
+                product.setStock(rs.getString("stock"));
+                product.setImage(rs.getString("img"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return product;
     }
-    
+
     public ArrayList<Product> getProductsByCategory(int categoryID) {
         ArrayList<Product> products = new ArrayList<>();
         try {
@@ -81,7 +97,7 @@ public class ProductDAO extends BaseDAO {
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
                 product.setDescription(rs.getString("spec"));
-                product.setStock(rs.getString("stock")); 
+                product.setStock(rs.getString("stock"));
                 product.setImage(rs.getString("img"));
                 products.add(product);
             }
@@ -90,4 +106,22 @@ public class ProductDAO extends BaseDAO {
         }
         return products;
     }
+
+    public ArrayList<String> getProductImage(int id) {
+        ArrayList<String> image = new ArrayList<>();
+        try {
+            String sql = "SELECT imgsrc FROM dbo.Image WHERE productID = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                image.add(rs.getString("imgsrc"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return image;
+    }
+    
+    
 }

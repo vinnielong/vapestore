@@ -32,7 +32,6 @@ public class Account {
         this.phonenumber = phonenumber;
         this.address = address;
     }
-   
 
     public String getUsername() {
         return username;

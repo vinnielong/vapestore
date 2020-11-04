@@ -4,6 +4,7 @@
     Author     : Vinnie Long
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="Model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,8 +28,9 @@
         </div>
         <%
             String category = "";
+            ArrayList<String> img = (ArrayList<String>) request.getAttribute("image");
             Product p = (Product) request.getAttribute("product");
-            if(p.getCategoryID() == 1){ 
+            if (p.getCategoryID() == 1) {
                 category = "Freebase Juice";
             } else if (p.getCategoryID() == 2) {
                 category = "Salt-Nicotine Juice";
@@ -43,9 +45,13 @@
                         <!-- Place somewhere in the <body> of your page -->
                         <div class="flexslider">
                             <ul class="slides">                               
-                                <li data-thumb="<%=p.getImage()%>">
-                                    <img src="<%=p.getImage()%>" class="w-100" />
+                                <%
+                                    for (int i = 0; i < img.size(); i++) {
+                                %>
+                                <li data-thumb="<%out.println(img.get(i));%>">
+                                    <img src="<%out.println(img.get(i));%>" class="w-100" />
                                 </li>
+                                <%}%>
                             </ul>
                         </div>
                     </div>
@@ -55,20 +61,23 @@
                             <h2><%=p.getPrice()%>đ</h2>
                             <p><%=p.getShortdesc()%></p>
                             <p>Category: <%=category%></p>
-                            <p>Origin:</p>
+                            <!--                            <p>Origin:</p>-->
                             <p>Stock: <%=p.getStock()%></p>
                             <div class="card_area"ss>
                                 <div class="product_count_area">
-                                    <p style="padding-top: 12px;">Quantity:</p>
+                                    <form action="productdetail?id=${requestScope.id}" method="POST">
+                                    Quantity:
                                     <div class="product_count d-inline-block">
                                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
                                         <input class="product_count_item input-number" type="text" value="1" min="0" max="100">
                                         <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                     </div>
+                                    <div class="add_to_cart">
+                                        <button type="submit" value="submit" class="btn_3">add to cart</button>
+                                    </div>
+                                    </form>
                                 </div>
-                                <div class="add_to_cart">
-                                    <a href="productdetail?id=1" class="btn_3">add to cart</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

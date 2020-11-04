@@ -44,59 +44,59 @@
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-                            
-                                <%
-                                    int total = 0;
-                                    ArrayList<Product> pro = (ArrayList<Product>) request.getAttribute("products");
-                                    if (pro != null && !pro.isEmpty()) {
-                                    for (Product p : pro) {
-                                %>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="d-flex">
-                                                <img src="<%=p.getImage()%>" alt="" />
-                                            </div>
-                                            <div class="media-body">
-                                                <p><%=p.getName()%></p>
-                                            </div>
+
+                            <%
+                                ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
+                                int total = 0;
+                                if (prod != null && !prod.isEmpty()) {
+                                    for (Product p : prod) {
+                            %>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="<%=p.getImage()%>" alt="" />
                                         </div>
-                                    </td>
-                                    <td>
-                                        <h5><%=p.getPrice()%></h5>
-                                    </td>
-                                    <td>
-                                        <div class="product_count">                                            
-                                            <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                                            <input class="input-number" type="text" value="1" min="0" max="100">
-                                            <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                        <div class="media-body">
+                                            <p><%=p.getName()%></p>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <h5><%=(p.getPrice() * p.getQuantity())%></h5>
-                                    </td>
-                                    <% total += (p.getPrice() * p.getQuantity());%>
-                                </tr> 
-                                <%}%>
-                                <%}%>
-                                <tr class="bottom_button">
-                                    <td>
-                                        <a class="btn_1" href="product">Update Cart</a>
-                                    </td>
-                                    <td></td>
-                                    <td></td>                                   
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <h5>Subtotal</h5>
-                                    </td>
-                                    <td>
-                                        <h5>đ <%=total%></h5>
-                                    </td>
-                                </tr>                               
-                            
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5><%=p.getPrice()%></h5>
+                                </td>
+                                <td>
+                                    <div class="product_count">                                            
+                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="input-number" type="text" value="1" min="0" max="100">
+                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5><%=(p.getPrice() * p.getQuantity())%></h5>
+                                </td>
+                                <% total += (p.getPrice() * p.getQuantity());%>
+                            </tr> 
+                            <%}%>
+                            <%}%>
+                            <tr class="bottom_button">
+                                <td>
+                                    <a class="btn_1" href="product">Update Cart</a>
+                                </td>
+                                <td></td>
+                                <td></td>                                   
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h5>Subtotal</h5>
+                                </td>
+                                <td>
+                                    <h5>đ <%=total%></h5>
+                                </td>
+                            </tr>                               
+
                         </table>
                         <div class="checkout_btn_inner float-right">
                             <a class="btn_1" href="product">Continue Shopping</a>

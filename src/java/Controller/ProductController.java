@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class ProductController extends HttpServlet{
+public class ProductController extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -34,7 +34,17 @@ public class ProductController extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
-        ArrayList<Product> products = dao.getAllProducts();
+        String page = request.getParameter("page");
+        if (page == null || page.trim().isEmpty()) {
+            page = "1";
+        }
+        int pageIndex = Integer.parseInt(page);
+        int pageSize = 4;
+        int totalRecords = dao.getTotalProducts();
+        int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
+        ArrayList<Product> products = dao.getAllProducts(pageIndex, pageSize);
+        request.setAttribute("pageIndex", pageIndex);
+        request.setAttribute("totalPages", totalPages);
         request.setAttribute("products", products);
         request.getRequestDispatcher("Products.jsp").forward(request, response);
     }
