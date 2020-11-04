@@ -72,7 +72,10 @@ public class ProductDetailController extends HttpServlet {
             product.setQuantity(product.getQuantity() + 1);
             products.add(product);
         }
-        doGet(request, response);
+//        doGet(request, response);
+        for (Product p : products) {
+            response.getWriter().println(p.getImage() + " " + p.getQuantity());
+        }
     }
 
     /**

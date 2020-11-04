@@ -44,12 +44,10 @@
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-
                             <%
                                 ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
                                 int total = 0;
-                                if (prod != null && !prod.isEmpty()) {
-                                    for (Product p : prod) {
+                                for (Product p : prod) {
                             %>
                             <tr>
                                 <td>
@@ -78,7 +76,6 @@
                                 <% total += (p.getPrice() * p.getQuantity());%>
                             </tr> 
                             <%}%>
-                            <%}%>
                             <tr class="bottom_button">
                                 <td>
                                     <a class="btn_1" href="product">Update Cart</a>
@@ -93,7 +90,7 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                                    <h5>đ <%=total%></h5>
+                                    <h5>đ </h5>
                                 </td>
                             </tr>                               
 

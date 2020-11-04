@@ -81,8 +81,7 @@
                                 </li>
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
-                                <%
-                                    
+                                <%                                   
                                     Account account = (Account) session.getAttribute("account");
                                     if (account != null) {
                                 %>

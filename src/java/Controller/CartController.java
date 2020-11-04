@@ -24,7 +24,9 @@ public class CartController extends BaseAuthController {
         Account acc = (Account) request.getSession().getAttribute("account");
         ArrayList<Product> products = acc.getProducts();
         request.setAttribute("products", products);
-        request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        for (Product p : products) {
+            response.getWriter().println(p.getImage() + p.getQuantity());
+        }
     }
 
     @Override

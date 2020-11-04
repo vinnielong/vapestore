@@ -7,7 +7,7 @@ function paggerBasic(paggerClass, pageIndex, totalPages, gap) {
             firstPagger.setAttribute('class', 'page-item');
             const firstPaggerLink = document.createElement('a');
             firstPaggerLink.setAttribute('class', 'page-link');
-            firstPaggerLink.href = '?page=1';
+            firstPaggerLink.href = '?catID=<%request.getAttribute("catID")%>/page=1';
             firstPaggerLink.innerHTML = 'First';
             firstPagger.appendChild(firstPaggerLink);
             paggerEl.appendChild(firstPagger);
@@ -18,7 +18,7 @@ function paggerBasic(paggerClass, pageIndex, totalPages, gap) {
                 numPagger.setAttribute('class', 'page-item');
                 const numPaggerLink = document.createElement('a');
                 numPaggerLink.setAttribute('class', 'page-link');
-                numPaggerLink.href = '?page=' + j;
+                numPaggerLink.href = 'catID=<%request.getAttribute("catID")%>/page=' + j;
                 numPaggerLink.innerHTML = j;
                 numPagger.appendChild(numPaggerLink);
                 paggerEl.appendChild(numPagger);

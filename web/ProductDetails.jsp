@@ -65,7 +65,7 @@
                             <p>Stock: <%=p.getStock()%></p>
                             <div class="card_area"ss>
                                 <div class="product_count_area">
-                                    <form action="productdetail?id=${requestScope.id}" method="POST">
+                                    <form action="productdetail?id=<%=p.getId()%>" method="POST">
                                     Quantity:
                                     <div class="product_count d-inline-block">
                                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
