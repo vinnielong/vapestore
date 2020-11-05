@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class ProductDetailController extends HttpServlet {
+public class ProductDetailController extends BaseAuthController {
 
     ProductDAO dao = new ProductDAO();
 
@@ -54,30 +54,32 @@ public class ProductDetailController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
         Product product = dao.getProductByID(id);
         Account account = (Account) request.getSession().getAttribute("account");
         ArrayList<Product> products = account.getProducts();
         boolean isExisted = false;
         for (Product p : products) {
             if (p.getId() == id) {
-                p.setQuantity(p.getQuantity() + 1);
+                p.setQuantity(quantity + p.getQuantity());
                 isExisted = true;
                 break;
             }
         }
         if (!isExisted) {
-            product.setQuantity(product.getQuantity() + 1);
+            product.setQuantity(quantity);
             products.add(product);
         }
-//        doGet(request, response);
-        for (Product p : products) {
-            response.getWriter().println(p.getImage() + " " + p.getQuantity());
-        }
+            doGet(request, response);
     }
 
+    @Override
+    protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
     /**
      * Returns a short description of the servlet.
      *
@@ -87,5 +89,6 @@ public class ProductDetailController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 
 }

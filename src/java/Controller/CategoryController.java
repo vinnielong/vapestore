@@ -6,6 +6,7 @@
 package Controller;
 
 import DAO.ProductDAO;
+import Model.Category;
 import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,18 +35,19 @@ public class CategoryController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
+        ArrayList<Category> category = dao.getCategory();
         int catID = Integer.parseInt(request.getParameter("catID"));
         String page = request.getParameter("page");
         if (page == null || page.trim().isEmpty()) {
             page = "1";
         }
         int pageIndex = Integer.parseInt(page);
-        int pageSize = 4;
-        int totalRecords = dao.getTotalProducts();
+        int pageSize = 6;
+        int totalRecords = dao.getTotalProductsByCatID(catID);
         int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
         ArrayList<Product> products = dao.getProductsByCategory(catID, pageIndex, pageSize);
         request.setAttribute("pageIndex", pageIndex);
-        request.setAttribute("catID", catID);
+        request.setAttribute("category", category);
         request.setAttribute("totalPages", totalPages);
         request.setAttribute("products", products);
         request.getRequestDispatcher("Products.jsp").forward(request, response);

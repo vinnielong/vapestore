@@ -4,6 +4,7 @@
     Author     : Vinnie Long
 --%>
 
+<%@page import="Model.Category"%>
 <%@page import="Model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -58,9 +59,12 @@
                                     <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                                     <div class="select_option_dropdown">
                                         <p><a href="product">All</a></p>
-                                        <p><a href="category?catID=1">Freebase Juice</a></p>
-                                        <p><a href="category?catID=2">Salt-Nicotine Juice</a></p>
-                                        <p><a href="category?catID=3">Devices</a></p>
+                                        <%
+                                            ArrayList<Category> cat = (ArrayList<Category>) request.getAttribute("category");
+                                            for (Category c : cat) {
+                                        %>
+                                        <p><a href="category?catID=<%=c.getId()%>"><%=c.getName()%></a></p>
+                                        <%}%>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +153,13 @@
         <%@include file="components/footer.jsp"%>
         <%@include file="components/script.jsp"%>
         <script src="assets/js/pagger.js"></script>
-        <script>
-            paggerBasic('pagination', ${requestScope.pageIndex}, ${requestScope.totalPages}, 2);
-        </script>
+        <c:choose>
+            <c:when test="${requestScope.catID eq null}">
+                <script>paggerBasic('pagination', ${requestScope.pageIndex}, ${requestScope.totalPages}, 3);</script>
+            </c:when>
+            <c:otherwise>
+                <script>pagger('pagination', 'catID', ${requestScope.catID}, ${requestScope.pageIndex}, ${requestScope.totalPages}, 2);</script>
+            </c:otherwise>
+        </c:choose>
     </body>
 </html>

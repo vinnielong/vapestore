@@ -88,3 +88,11 @@
         </script>
     </body>
 </html>
+<c:choose>
+            <c:when >
+                <script>paggerBasic('pagination', ${requestScope.pageIndex}, ${requestScope.totalPages}, 2);</script>
+            </c:when>      
+            <c:otherwise>
+                <script>pagger('pagination', 'catID', ${requestScope.catID}, ${requestScope.pageIndex}, ${requestScope.totalPages}, 1);</script>
+            </c:otherwise>
+        </c:choose>>

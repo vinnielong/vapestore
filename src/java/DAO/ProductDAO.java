@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Model.Category;
 import Model.Product;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -123,5 +124,34 @@ public class ProductDAO extends BaseDAO {
         return image;
     }
     
-    
+    public ArrayList<Category> getCategory() {
+        ArrayList<Category> category = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM dbo.Category";
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                category.add(new Category(rs.getInt("categoryID"), rs.getString("categoryName")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return category;
+    }
+
+    public int getTotalProductsByCatID(int id) {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) total FROM dbo.Products WHERE categoryID = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("total");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
 }

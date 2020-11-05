@@ -45,9 +45,10 @@
                                 </tr>
                             </thead>
                             <%
-                                ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
                                 int total = 0;
-                                for (Product p : prod) {
+                                ArrayList<Product> prod = account.getProducts();
+                                if (prod != null || !prod.isEmpty()) {
+                                    for (Product p : prod) {
                             %>
                             <tr>
                                 <td>
@@ -62,19 +63,20 @@
                                 </td>
                                 <td>
                                     <h5><%=p.getPrice()%></h5>
-                                </td>
+                                </td>                                    
                                 <td>
-                                    <div class="product_count">                                            
-                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                                        <input class="input-number" type="text" value="1" min="0" max="100">
-                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                                    </div>
+                                        <div class="product_count">                                            
+                                            <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                            <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                            <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                        </div>
                                 </td>
                                 <td>
                                     <h5><%=(p.getPrice() * p.getQuantity())%></h5>
                                 </td>
-                                <% total += (p.getPrice() * p.getQuantity());%>
+                                <%total += p.getPrice() * p.getQuantity();%>
                             </tr> 
+                            <%}%>
                             <%}%>
                             <tr class="bottom_button">
                                 <td>
@@ -90,7 +92,7 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                                    <h5>đ </h5>
+                                    <h5>đ <%=total%></h5>
                                 </td>
                             </tr>                               
 
