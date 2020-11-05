@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class CategoryController extends HttpServlet {
+public class SearchController extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -36,34 +36,11 @@ public class CategoryController extends HttpServlet {
             throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
         ArrayList<Category> category = dao.getCategory();
-        int catID = Integer.parseInt(request.getParameter("catID"));
-        String page = request.getParameter("page");
-        if (page == null || page.trim().isEmpty()) {
-            page = "1";
-        }
-        int pageIndex = Integer.parseInt(page);
-        int pageSize = 4;
-        if (catID == 0) {
-            int totalRecords = dao.getTotalProducts();
-            int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
-            ArrayList<Product> products = dao.getAllProducts(pageIndex, pageSize);
-            request.setAttribute("totalPages", totalPages);
-            request.setAttribute("products", products);           
-            request.setAttribute("pageIndex", pageIndex);            
-            request.setAttribute("catID", catID);          
-            request.setAttribute("category", category);            
-            request.getRequestDispatcher("Products.jsp").forward(request, response);
-        } else {
-            int totalRecords = dao.getTotalProductsByCatID(catID);
-            int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
-            ArrayList<Product> products = dao.getProductsByCategory(catID, pageIndex, pageSize);
-            request.setAttribute("totalPages", totalPages);
-            request.setAttribute("catID", catID);
-            request.setAttribute("products", products);
-            request.setAttribute("pageIndex", pageIndex);
-            request.setAttribute("category", category);
-            request.getRequestDispatcher("Products.jsp").forward(request, response);
-        }
+        String search = request.getParameter("Search");
+        ArrayList<Product> products = dao.search(search);
+        request.setAttribute("products", products);
+        request.setAttribute("category", category);  
+        request.getRequestDispatcher("Products.jsp").forward(request, response);
     }
 
     /**
@@ -77,7 +54,12 @@ public class CategoryController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        ProductDAO dao = new ProductDAO();
+        ArrayList<Category> category = dao.getCategory();
+        String search = request.getParameter("Search");
+        ArrayList<Product> products = dao.search(search);
+        request.setAttribute("products", products);
+        doGet(request, response);
     }
 
     /**

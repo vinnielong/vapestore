@@ -64,7 +64,6 @@
                                         <li><a href="category?catID=0">Shop</a></li>    
                                         <li><a href="contact">Contact</a></li>
                                         <li><a href="about">About</a></li>
-                                        <!--<li><a href="login">Login</a></li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -72,12 +71,14 @@
                         <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                             <ul class="header-right f-left d-none d-lg-block d-flex justify-content-between">
                                 <li class="d-none d-xl-block">
-                                    <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
-                                        <input type="text" name="Search" placeholder="Search products">
-                                        <div class="search-icon">
-                                            <i class="fas fa-search special-tag"></i>
+                                    <form action="search" method="POST" >
+                                        <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
+                                            <input type="text" name="Search" placeholder="Search products">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search special-tag"><button type="submit" value="submit" style="visibility: hidden;" ></button></i>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
@@ -91,8 +92,8 @@
                                             <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
                                             <ul class="submenu" style="left: -13px;">
                                                 <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
-                                                <li><a href="cart">Cart</a></li>
-                                                <li><a href="Checkout.jsp">Checkout</a></li>
+                                                <li><a href="Cart.jsp">Cart</a></li>
+                                                <li><a href="checkout?username=<%=account.getUsername()%>">Checkout</a></li>
                                                 <li><a href="logout"> Logout</a></li>
                                             </ul>
                                         </li>

@@ -49,7 +49,7 @@
                                 ArrayList<Product> prod = account.getProducts();
                                 if (prod != null || !prod.isEmpty()) {
                                     for (Product p : prod) {
-                            %>
+                            %>  
                             <tr>
                                 <td>
                                     <div class="media">
@@ -80,7 +80,7 @@
                             <%}%>
                             <tr class="bottom_button">
                                 <td>
-                                    <a class="btn_1" href="product">Update Cart</a>
+                                    <a class="btn_1" href="category?catID=0">Update Cart</a>
                                 </td>
                                 <td></td>
                                 <td></td>                                   
@@ -98,8 +98,8 @@
 
                         </table>
                         <div class="checkout_btn_inner float-right">
-                            <a class="btn_1" href="product">Continue Shopping</a>
-                            <a class="btn_1 checkout_btn_1" href="checkout">Proceed to checkout</a>
+                            <a class="btn_1" href="category?catID=0">Continue Shopping</a>
+                            <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>

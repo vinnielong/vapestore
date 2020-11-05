@@ -26,7 +26,9 @@
             </div>
         </div>
         <!-- slider Area End-->
-
+        <%
+            Account accounts = (Account) request.getAttribute("acc");
+        %>
         <section class="login_part section_padding " style="padding: 0px;">
             <div class="container">
                 <div class="row align-items-center">               
@@ -35,20 +37,27 @@
                             <div class="login_part_form_iner">
                                 <h3 style="text-align: center;">PASSWORD RESET <br> </h3>
                                 <form class="row contact_form" action="reset" method="POST">  
-                                    <%if(request.getAttribute("errorMsg") != null) {%>
+                                    Username: 
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="text" class="form-control" id="username" name="username" value="" required>
+                                    </div><br>
+                                    Old Password: 
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="password" name="oldpass" value="" required>
+                                    </div><br>
+                                    New Password:
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="password" name="newpass" value="" required>
+                                    </div><br>                            
+                                    Re-enter New Password:
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="password" name="renewpass" value="" required>
+                                    </div><br>   
+                                    <%if (request.getAttribute("errorMsg") != null) {%>
                                     <div class="col-md-12 form-group p_star">
                                         <label for="incorrect" style="color: red;"><%=request.getAttribute("errorMsg")%></label>
                                     </div>
                                     <%}%>
-                                    Old Password: 
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="password" name="oldpass" value="" required></div><br>
-                                    New Password:
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="password" name="newpass" value="" required></div><br>                            
-                                    Re-enter New Password:
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="password" name="renewpass" value="" required></div><br>                            
                                     <div class="col-md-12 form-group">
                                         <button type="submit" value="submit" class="btn_3">reset</button>
                                         <a class="lost_pass" href="login">Skip! Go back to shopping</a>

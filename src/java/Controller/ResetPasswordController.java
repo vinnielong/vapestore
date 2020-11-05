@@ -5,8 +5,11 @@
  */
 package Controller;
 
+import DAO.AccountDAO;
+import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class ResetPasswordController extends BaseAuthController {
+public class ResetPasswordController extends HttpServlet {
+
+    AccountDAO dao = new AccountDAO();
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -28,7 +33,7 @@ public class ResetPasswordController extends BaseAuthController {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void processGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("ResetPassword.jsp").forward(request, response);
     }
@@ -42,8 +47,18 @@ public class ResetPasswordController extends BaseAuthController {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void processPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String newpass = request.getParameter("newpass");
+        String renewpass = request.getParameter("renewpass");
+//        ArrayList<Account> accounts = dao.getAllAccounts();
+        if (!newpass.equals(renewpass)) {
+            request.setAttribute("errorMsg", "New Password and Renew Password does not match!");
+            doGet(request, response);
+        } else {
+            
+        }
     }
 
     /**

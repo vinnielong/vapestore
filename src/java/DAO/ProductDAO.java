@@ -73,7 +73,6 @@ public class ProductDAO extends BaseDAO {
                 product.setPrice(rs.getInt("price"));
                 product.setCategoryID(rs.getInt("categoryID"));
                 product.setShortdesc(rs.getString("detail"));
-                product.setDescription(rs.getString("spec"));
                 product.setStock(rs.getString("stock"));
                 product.setImage(rs.getString("img"));
             }
@@ -154,12 +153,33 @@ public class ProductDAO extends BaseDAO {
         }
         return count;
     }
-    
+
     public ArrayList<Product> getLatestProducts() {
         ArrayList<Product> products = new ArrayList<>();
         try {
             String sql = "SELECT TOP 6 * FROM dbo.Products";
             PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setId(rs.getInt("productID"));
+                p.setName(rs.getString("productName"));
+                p.setPrice(rs.getInt("price"));
+                p.setImage(rs.getString("img"));
+                products.add(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
+    }
+
+    public ArrayList<Product> search(String text) {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM dbo.Products WHERE productName like '%? %'";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, text);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Product p = new Product();

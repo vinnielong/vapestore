@@ -34,8 +34,8 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
-        ArrayList<Product> products = dao.getLatestProducts();
-        request.setAttribute("products", products);
+        ArrayList<Product> newPro = dao.getLatestProducts();
+        request.setAttribute("newPro", newPro);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 

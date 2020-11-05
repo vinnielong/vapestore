@@ -9,6 +9,7 @@ import Model.Account;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,21 @@ import java.util.logging.Logger;
  */
 public class AccountDAO extends BaseDAO {
 
+    public ArrayList<Account> getAllAccounts() {
+        ArrayList<Account> accounts = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM dbo.Account";
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                accounts.add(new Account(rs.getString("username"), rs.getString("password"), rs.getString("fullname"), rs.getString("email"), rs.getString("phonenumber"), rs.getString("address")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return accounts;
+    }
+    
     public Account Login(String username, String password) {
         Account account = null;
         try {
@@ -127,4 +143,5 @@ public class AccountDAO extends BaseDAO {
         }
         return isReset;
     }
+    
 }
