@@ -4,7 +4,6 @@
     Author     : Vinnie Long
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Model.Category"%>
 <%@page import="Model.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -60,7 +59,7 @@
                                 <div class="select_option">
                                     <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                                     <div class="select_option_dropdown">
-                                        <p><a href="product">All</a></p>
+                                        <p><a href="category?catID=0">All</a></p>
                                         <%
                                             ArrayList<Category> cat = (ArrayList<Category>) request.getAttribute("category");
                                             for (Category c : cat) {
@@ -156,9 +155,9 @@
         <%@include file="components/script.jsp"%>
         <script src="assets/js/pagger.js"></script>
         <%
-            String cate = (String) request.getAttribute("catID");
-            int pageIndex = Integer.parseInt(request.getAttribute("pageIndex").toString());
-            int totalPages = Integer.parseInt(request.getAttribute("totalPages").toString());
+            String cate = request.getAttribute("catID").toString();
+            int pageIndex = (int) request.getAttribute("pageIndex");
+            int totalPages = (int) request.getAttribute("totalPages");
             if (cate == null || cate.trim().isEmpty()) {
         %>
         <script>paggerBasic('pagination', <%=pageIndex%>, <%=totalPages%>, 3);</script>

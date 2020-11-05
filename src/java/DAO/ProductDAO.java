@@ -154,4 +154,24 @@ public class ProductDAO extends BaseDAO {
         }
         return count;
     }
+    
+    public ArrayList<Product> getLatestProducts() {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sql = "SELECT TOP 6 * FROM dbo.Products";
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setId(rs.getInt("productID"));
+                p.setName(rs.getString("productName"));
+                p.setPrice(rs.getInt("price"));
+                p.setImage(rs.getString("img"));
+                products.add(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
+    }
 }

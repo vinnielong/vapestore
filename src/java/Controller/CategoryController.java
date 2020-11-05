@@ -43,15 +43,27 @@ public class CategoryController extends HttpServlet {
         }
         int pageIndex = Integer.parseInt(page);
         int pageSize = 6;
-        int totalRecords = dao.getTotalProductsByCatID(catID);
-        int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
-        ArrayList<Product> products = dao.getProductsByCategory(catID, pageIndex, pageSize);
-        request.setAttribute("catID", catID);
-        request.setAttribute("pageIndex", pageIndex);
-        request.setAttribute("category", category);
-        request.setAttribute("totalPages", totalPages);
-        request.setAttribute("products", products);
-        request.getRequestDispatcher("Products.jsp").forward(request, response);
+        if (catID == 0) {
+            int totalRecords = dao.getTotalProducts();
+            int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
+            ArrayList<Product> products = dao.getAllProducts(pageIndex, pageSize);
+            request.setAttribute("totalPages", totalPages);
+            request.setAttribute("products", products);           
+            request.setAttribute("pageIndex", pageIndex);            
+            request.setAttribute("catID", catID);          
+            request.setAttribute("category", category);            
+            request.getRequestDispatcher("Products.jsp").forward(request, response);
+        } else {
+            int totalRecords = dao.getTotalProductsByCatID(catID);
+            int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
+            ArrayList<Product> products = dao.getProductsByCategory(catID, pageIndex, pageSize);
+            request.setAttribute("totalPages", totalPages);
+            request.setAttribute("catID", catID);
+            request.setAttribute("products", products);
+            request.setAttribute("pageIndex", pageIndex);
+            request.setAttribute("category", category);
+            request.getRequestDispatcher("Products.jsp").forward(request, response);
+        }
     }
 
     /**

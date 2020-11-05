@@ -42,7 +42,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Vape Of 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="product" class="btn hero-btn">Shop Now</a>
+                                            <a href="category?catID=0" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                                         <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                            <a href="product" class="btn hero-btn">Shop Now</a>
+                                            <a href="category?catID=0" class="btn hero-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -147,42 +147,29 @@
                         <!-- card one -->
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="row">
+                                <%
+                                    ArrayList<Product> prod = (ArrayList<Product>) request.getAttribute("products");
+                                    for (Product p : prod) {
+                                %>
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="single-product mb-60">
                                         <div class="product-img">
-                                            <img src="assets/img/categories/product1.jpg" alt="">
+                                            <img src="<%=p.getImage()%>" alt="">
                                             <div class="new-product">
                                                 <span>New</span>
                                             </div>
                                         </div>
                                         <div class="product-caption">                                           
-                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
+                                            <h4><a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%></a></h4>
                                             <div class="price">
                                                 <ul>
-                                                    <li>$40.00</li>
-                                                    <li class="discount">$60.00</li>
+                                                    <li>đ <%=p.getPrice()%></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6">
-                                    <div class="single-product mb-60">
-                                        <div class="product-img">
-                                            <img src="assets/img/categories/product2.jpg" alt="">
-                                        </div>
-                                        <div class="product-caption">
-
-                                            <h4><a href="ProductDetails.jsp">Green Dress with details</a></h4>
-                                            <div class="price">
-                                                <ul>
-                                                    <li>$40.00</li>
-                                                    <li class="discount">$60.00</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                            
+                                <%}%>
                             </div>
                         </div>
                         <!-- Card two -->
@@ -302,7 +289,7 @@
                                 <div class="best-product-caption">
                                     <h2 style="padding-left: 140px;">Find The Best Product<br> from Our Shop</h2>
                                     <p style="padding-left: 140px;">Customers who are interested creating state of the.</p>
-                                    <a href="product" class="black-btn" style="margin-left: 140px">Shop Now</a>
+                                    <a href="category?catID=0" class="black-btn" style="margin-left: 140px">Shop Now</a>
                                 </div>
                             </div>
                         </div>
