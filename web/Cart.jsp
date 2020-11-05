@@ -64,7 +64,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><%=p.getPrice()%></h5>
+                                    <h5><%=p.getPrice()%> đ</h5>
                                 </td>                                    
                                 <td>
                                         <div class="product_count">                                            
@@ -74,7 +74,7 @@
                                         </div>
                                 </td>
                                 <td>
-                                    <h5><%=(p.getPrice() * p.getQuantity())%></h5>
+                                    <h5><%=(p.getPrice() * p.getQuantity())%> đ</h5>
                                 </td>
                                 <%total += p.getPrice() * p.getQuantity();%>
                             </tr> 
@@ -94,7 +94,7 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                                    <h5>đ <%=total%></h5>
+                                    <h5><%=total%> đ</h5>
                                 </td>
                             </tr>                               
 
