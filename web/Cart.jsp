@@ -49,11 +49,13 @@
                                 ArrayList<Product> prod = account.getProducts();
                                 if (prod != null || !prod.isEmpty()) {
                                     for (Product p : prod) {
+                                
                             %>  
+                            <input type="hidden" name="id" value="<%=p.getId()%>">
                             <tr>
                                 <td>
                                     <div class="media">
-                                        <div class="d-flex">
+                                        <div class="d-flex"> 
                                             <img src="<%=p.getImage()%>" alt="" />
                                         </div>
                                         <div class="media-body">
@@ -80,7 +82,7 @@
                             <%}%>
                             <tr class="bottom_button">
                                 <td>
-                                    <a class="btn_1" href="category?catID=0">Update Cart</a>
+                                    <a class="btn_1" href="cart">Update Cart</a>
                                 </td>
                                 <td></td>
                                 <td></td>                                   

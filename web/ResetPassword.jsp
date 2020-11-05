@@ -36,11 +36,8 @@
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
                                 <h3 style="text-align: center;">PASSWORD RESET <br> </h3>
-                                <form class="row contact_form" action="reset" method="POST">  
-                                    Username: 
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="username" name="username" value="" required>
-                                    </div><br>
+                                <form class="row contact_form" action="reset" method="POST">
+                                    <input type="hidden" class="form-control" id="username" name="username" value="<%=account.getUsername()%>" required>
                                     Old Password: 
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="password" name="oldpass" value="" required>

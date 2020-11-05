@@ -35,8 +35,7 @@ public class CheckoutController extends BaseAuthController {
     }
 
     @Override
-    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AccountDAO dao = new AccountDAO();       
+    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {     
         CheckoutDAO cdao = new CheckoutDAO();
         String username = request.getParameter("username");
         String fullname = request.getParameter("name");
@@ -48,7 +47,7 @@ public class CheckoutController extends BaseAuthController {
         String postcode = request.getParameter("zip");
         String message = request.getParameter("message");
         Account account = dao.getAccountByID(username);
-        ArrayList<Product> prod = account.getProducts();
+//        ArrayList<Product> prod = account.getProducts();
         request.setAttribute("name", fullname);
         request.setAttribute("number", number);
         request.setAttribute("email", email);

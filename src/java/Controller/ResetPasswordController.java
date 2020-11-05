@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class ResetPasswordController extends HttpServlet {
+public class ResetPasswordController extends BaseAuthController {
 
     AccountDAO dao = new AccountDAO();
 
@@ -33,7 +33,7 @@ public class ResetPasswordController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("ResetPassword.jsp").forward(request, response);
     }
@@ -47,17 +47,24 @@ public class ResetPasswordController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("username");
+        String oldpass = request.getParameter("oldpass");
         String newpass = request.getParameter("newpass");
         String renewpass = request.getParameter("renewpass");
-//        ArrayList<Account> accounts = dao.getAllAccounts();
+        Account account = dao.getAccountByID(username);
         if (!newpass.equals(renewpass)) {
             request.setAttribute("errorMsg", "New Password and Renew Password does not match!");
-            doGet(request, response);
+            processGet(request, response);
         } else {
-            
+            if (!oldpass.equals(account.getPassword())) {
+                request.setAttribute("errorMsg", "Old password incorrect!");
+                processGet(request, response);
+            } else {
+                dao.resetPassword(username, newpass);
+                response.sendRedirect("home");
+            }
         }
     }
 

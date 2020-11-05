@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.ProductDAO;
 import Model.Account;
 import Model.Product;
 import java.io.IOException;
@@ -29,7 +30,19 @@ public class CartController extends BaseAuthController {
     
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        ProductDAO dao = new ProductDAO();
+        int id = Integer.parseInt(request.getParameter("id"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        Product product = dao.getProductByID(id);
+        Account account = (Account) request.getSession().getAttribute("account");
+        ArrayList<Product> products = account.getProducts();
+        for (Product p : products) {
+            if (p.getId() == id) {
+                p.setQuantity(quantity);
+                break;
+            }
+        }
+        processGet(request, response);
     }
     
 }

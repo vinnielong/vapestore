@@ -9,6 +9,7 @@ import DAO.AccountDAO;
 import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        AccountDAO dao = new AccountDAO();
         String username = request.getParameter("username");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
@@ -53,18 +55,30 @@ public class RegisterController extends HttpServlet {
         String phonenumber = request.getParameter("phonenumber");
         String password = request.getParameter("pass");
         String repassword = request.getParameter("repass");
-        if(!password.equals(repassword)) {
+        ArrayList<Account> accounts = dao.getAllAccounts();
+        boolean usernameExisted = false;
+        boolean emailExisted = false;
+        for (Account a : accounts) {
+            if (username.equals(a.getUsername())) {
+                usernameExisted = true;
+            } else if(email.equals(a.getEmail())) {
+                emailExisted = true;
+            }
+        }
+        if (!password.equals(repassword)) {
             request.setAttribute("errorMsg", "Password and Repassword not match!");
             doGet(request, response);
         } else {
-            Account acc = new Account(username, password, fullname, email, phonenumber, address);
-            AccountDAO dao = new AccountDAO();
-            boolean isCreated = dao.register(acc);
-            if(isCreated) {
-                response.sendRedirect("login");
-            } else {
-                request.setAttribute("errorMsg", "Password and Repassword not match!");
+            if (usernameExisted) {
+                request.setAttribute("errorMsg", "Username existed!");
                 doGet(request, response);
+            } else if(emailExisted) {
+                request.setAttribute("errorMsg", "Email existed!");
+                doGet(request, response);
+            } else {
+                Account acc = new Account(username, password, fullname, email, phonenumber, address);
+                dao.register(acc);
+                response.sendRedirect("login");
             }
         }
     }
