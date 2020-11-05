@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Vinnie Long
@@ -19,6 +21,7 @@ public class Checkout {
     private String city;
     private String postcode;
     private String message;
+    private ArrayList<Product> totalproducts = new ArrayList<>();
 
     public Checkout() {
     }
@@ -97,6 +100,16 @@ public class Checkout {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public ArrayList<Product> getTotalproducts() {
+        return totalproducts;
+    }
+
+    public void setTotalproducts(ArrayList<Product> totalproducts) {
+        this.totalproducts = totalproducts;
+    }
+    
+    
     
     
 }

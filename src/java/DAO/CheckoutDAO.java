@@ -20,10 +20,16 @@ public class CheckoutDAO extends BaseDAO{
     public boolean createOrder(Checkout c) {
         boolean isOrdered = false;
         try {
-            String sql = "";
+            String sql = "INSERT INTO dbo.Orders (fullname, phonenumber, email, country, address, city, postcode, message) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setInt(0, 0);
-            st.setString(0, sql);
+            st.setString(1, c.getFullname());
+            st.setString(2, c.getPhonenumber());
+            st.setString(3, c.getEmail());
+            st.setString(4, c.getCountry());
+            st.setString(5, c.getAddress());
+            st.setString(6, c.getCity());
+            st.setString(7, c.getPostcode());
+            st.setString(8, c.getMessage());
             isOrdered = st.executeUpdate() > 0;
         } catch (SQLException ex) {
             Logger.getLogger(CheckoutDAO.class.getName()).log(Level.SEVERE, null, ex);

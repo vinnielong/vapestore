@@ -112,7 +112,7 @@
                                             </a>
                                         </li>
                                     </ul><br>
-                                    <a class="btn_3" href="#">Proceed to Order</a>
+                                    <button type="submit" value="submit" class="btn_3" href="#">Proceed to Order</button>>
                                 </div>
                             </div>
                         </div>

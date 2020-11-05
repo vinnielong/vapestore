@@ -9,8 +9,10 @@ import DAO.AccountDAO;
 import DAO.CheckoutDAO;
 import Model.Account;
 import Model.Checkout;
+import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +36,7 @@ public class CheckoutController extends BaseAuthController {
 
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AccountDAO dao = new AccountDAO();       
         CheckoutDAO cdao = new CheckoutDAO();
         String username = request.getParameter("username");
         String fullname = request.getParameter("name");
@@ -44,6 +47,8 @@ public class CheckoutController extends BaseAuthController {
         String city = request.getParameter("city");
         String postcode = request.getParameter("zip");
         String message = request.getParameter("message");
+        Account account = dao.getAccountByID(username);
+        ArrayList<Product> prod = account.getProducts();
         request.setAttribute("name", fullname);
         request.setAttribute("number", number);
         request.setAttribute("email", email);
@@ -59,7 +64,7 @@ public class CheckoutController extends BaseAuthController {
         c.setMessage(email);
         boolean isOrdered = cdao.createOrder(c);
         if (isOrdered) {
-            processGet(request, response);
+            response.sendRedirect("home");
         }
     }
 
