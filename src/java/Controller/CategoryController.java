@@ -46,6 +46,7 @@ public class CategoryController extends HttpServlet {
         int totalRecords = dao.getTotalProductsByCatID(catID);
         int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;
         ArrayList<Product> products = dao.getProductsByCategory(catID, pageIndex, pageSize);
+        request.setAttribute("catID", catID);
         request.setAttribute("pageIndex", pageIndex);
         request.setAttribute("category", category);
         request.setAttribute("totalPages", totalPages);

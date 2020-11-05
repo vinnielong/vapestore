@@ -35,11 +35,11 @@
                                     <li>+84 934 578864</li>
                                 </ul>
                             </div>   
-                            <div class="header-info-right">
+                            <div class="header-info-right" style="margin-right: 30px; size: 40px;">
                                 <ul>                                          
-                                    <li><a href="#"><img src=""></a></li>
-                                    <li><a href="#"><img src=""></a></li>
-                                    <li><a href="#"><img src=""></a></li>
+                                    <li><a href="#"><img src="https://stockx-assets.imgix.net/svg/icons/twitter-footer.svg?auto=compress,format"></a></li>
+                                    <li><a href="#"><img src="https://stockx-assets.imgix.net/svg/icons/facebook-footer.svg?auto=compress,format"></a></li>
+                                    <li><a href="#"><img src="https://stockx-assets.imgix.net/svg/icons/instagram-footer.svg?auto=compress,format"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                 </li>
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
-                                <%                                   
+                                <%
                                     Account account = (Account) session.getAttribute("account");
                                     if (account != null) {
                                 %>

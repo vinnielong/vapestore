@@ -86,7 +86,7 @@ public class ProductDAO extends BaseDAO {
     public ArrayList<Product> getProductsByCategory(int categoryID, int pageIndex, int pageSize) {
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "WITH r AS (SELECT ROW_NUMBER() OVER (ORDER BY productID DESC) rownum, productID, productName, price, img FROM dbo.Products WHERE categoryID = ?) SELECT * FROM r WHERE r.rownum >= (? - 1) * ? + 1 AND r.rownum <= ? * ?";           
+            String sql = "WITH r AS (SELECT ROW_NUMBER() OVER (ORDER BY productID DESC) rownum, productID, productName, price, img FROM dbo.Products WHERE categoryID = ?) SELECT * FROM r WHERE r.rownum >= (? - 1) * ? + 1 AND r.rownum <= ? * ?";
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, categoryID);
             st.setInt(2, pageIndex);
@@ -123,7 +123,7 @@ public class ProductDAO extends BaseDAO {
         }
         return image;
     }
-    
+
     public ArrayList<Category> getCategory() {
         ArrayList<Category> category = new ArrayList<>();
         try {

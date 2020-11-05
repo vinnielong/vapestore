@@ -34,7 +34,7 @@
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
                                 <h3 style="text-align: center;">PASSWORD RESET <br> </h3>
-                                <form class="row contact_form" action="register" method="POST">  
+                                <form class="row contact_form" action="reset" method="POST">  
                                     <%if(request.getAttribute("errorMsg") != null) {%>
                                     <div class="col-md-12 form-group p_star">
                                         <label for="incorrect" style="color: red;"><%=request.getAttribute("errorMsg")%></label>

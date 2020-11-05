@@ -4,6 +4,7 @@
     Author     : Vinnie Long
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Model.Category"%>
 <%@page import="Model.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -25,6 +26,7 @@
         </div>
         <!-- Preloader End -->
         <%@include file="components/header.jsp"%>
+
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
@@ -64,7 +66,7 @@
                                             for (Category c : cat) {
                                         %>
                                         <p><a href="category?catID=<%=c.getId()%>"><%=c.getName()%></a></p>
-                                        <%}%>
+                                            <%}%>
                                     </div>
                                 </div>
                             </div>
@@ -153,13 +155,20 @@
         <%@include file="components/footer.jsp"%>
         <%@include file="components/script.jsp"%>
         <script src="assets/js/pagger.js"></script>
-        <c:choose>
-            <c:when test="${requestScope.catID eq null}">
-                <script>paggerBasic('pagination', ${requestScope.pageIndex}, ${requestScope.totalPages}, 3);</script>
-            </c:when>
-            <c:otherwise>
-                <script>pagger('pagination', 'catID', ${requestScope.catID}, ${requestScope.pageIndex}, ${requestScope.totalPages}, 2);</script>
-            </c:otherwise>
-        </c:choose>
+        <%
+            String cate = (String) request.getAttribute("catID");
+            int pageIndex = Integer.parseInt(request.getAttribute("pageIndex").toString());
+            int totalPages = Integer.parseInt(request.getAttribute("totalPages").toString());
+            if (cate == null || cate.trim().isEmpty()) {
+        %>
+        <script>paggerBasic('pagination', <%=pageIndex%>, <%=totalPages%>, 3);</script>
+        <%
+        } else {
+            int cateid = Integer.parseInt(cate);
+        %>
+        <script>pagger('pagination', 'catID', <%=cateid%>, <%=pageIndex%>, <%=totalPages%>, 2);</script>
+        <%
+            }
+        %>
     </body>
 </html>

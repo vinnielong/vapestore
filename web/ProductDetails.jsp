@@ -66,22 +66,28 @@
                             <div class="card_area"ss>
                                 <div class="product_count_area">
                                     <form action="productdetail?id=<%=p.getId()%>" method="POST">
-                                    Quantity:
-                                    <div class="product_count d-inline-block">
-                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                        <input class="product_count_item input-number" name="quantity" type="text" value="1" min="0" max="100">
-                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-                                    </div>
-                                    <div class="add_to_cart">
-                                        <button type="submit" value="submit" class="btn_3">add to cart</button>
-                                    </div>
+                                        Quantity:
+                                        <div class="product_count d-inline-block">
+                                            <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                            <input class="product_count_item input-number" name="quantity" type="text" value="1" min="0" max="100">
+                                            <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                        </div>
+                                        <div class="add_to_cart">
+                                            <button type="submit" value="submit" class="btn_3">add to cart</button>
+                                        </div>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12"><%=p.getDescription()%></div>
+                    <div class="col-lg-12" style="padding-top: 30px;">
+                        <h2 class="single_product_text">Specifications</h2><br>                  
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget quam in libero consequat vehicula quis et diam. 
+                            Nullam mollis diam ut massa porta, vitae rutrum nibh lacinia. Mauris ornare aliquam urna. Sed posuere dui ac ante finibus laoreet. Fusce ut elit euismod, luctus 
+                            dolor eu, porta neque. Mauris id velit in sem mollis sodales luctus sollicitudin velit. Maecenas pellentesque tempus nunc, ac eleifend nulla. Mauris hendrerit velit 
+                            sed leo congue, ut porttitor felis feugiat. Mauris odio eros, dapibus nec molestie a, bibendum pellentesque neque. Curabitur lobortis lacinia ipsum, ut euismod arcu 
+                            mollis mollis. Integer at venenatis nisi.</p>
+                    </div>
                 </div>
             </div>
         </section>
