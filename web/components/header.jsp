@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="sun.java2d.pipe.hw.AccelDeviceEventListener"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.Product"%>
@@ -83,6 +84,7 @@
                             </ul>
                             <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
                                 <%
+                                    DecimalFormat formatter = new DecimalFormat("###,###,###");
                                     Account account = (Account) session.getAttribute("account");
                                     if (account != null) {
                                 %>
@@ -92,7 +94,7 @@
                                             <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
                                             <ul class="submenu" style="left: -13px;">
                                                 <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
-                                                <li><a href="Cart.jsp">Cart</a></li>
+                                                <li><a href="cart">Cart</a></li>
                                                 <li><a href="checkout?username=<%=account.getUsername()%>">Checkout</a></li>
                                                 <li><a href="logout"> Logout</a></li>
                                             </ul>

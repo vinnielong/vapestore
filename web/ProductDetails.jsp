@@ -58,7 +58,7 @@
                     <div class="col-lg-6" style="padding-top: 65px;">
                         <div class="single_product_text">
                             <h1><%=p.getName()%></h1>
-                            <h2><%=p.getPrice()%>đ</h2>
+                            <h2><%out.print(formatter.format(p.getPrice()));%> đ</h2>
                             <p><%=p.getShortdesc()%></p>
                             <p>Category: <%=category%></p>
                             <!--                            <p>Origin:</p>-->

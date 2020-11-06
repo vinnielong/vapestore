@@ -61,11 +61,6 @@
                                     <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Postcode/ZIP'" required="" />
                                 </div>                                
                                 <div class="col-md-12 form-group">
-                                    <div class="creat_account">
-                                        <h3>Shipping Details</h3>
-                                        <input type="checkbox" id="f-option3" name="selector" />
-                                        <label for="f-option3">Ship to a different address?</label>
-                                    </div>
                                     <textarea class="form-control" name="message" id="message" rows="1"
                                               placeholder="Order Notes"></textarea>
                                 </div>
@@ -91,7 +86,7 @@
                                             <input type="hidden" name="order" value="<%=order%>">
                                             <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%><br>
                                                 <span class="middle"><%=p.getQuantity()%></span>
-                                                <span class="last"><%=(p.getPrice() * p.getQuantity())%></span>
+                                                <span class="last"><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%>đ</span>
                                             </a>
                                         </li><br>       
                                         <%total += p.getPrice() * p.getQuantity();%>
@@ -101,22 +96,22 @@
                                     <ul class="list list_2">
                                         <li>
                                             <a href="#">Subtotal
-                                                <span><%=total%>đ</span>
+                                                <span><%out.print(formatter.format(total));%>đ</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">Shipping
-                                                <span>Flat rate: 50000đ</span>
+                                                <span>Flat rate: 50,000đ</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">Total
-                                                <span><%=total + 50000%>đ</span>
+                                                <span><%out.print(formatter.format(total + 50000));%>đ</span>
                                             </a>
                                         </li>
                                         <input type="hidden" name="total" value="<%=total%>">
                                     </ul><br>
-                                    <button type="submit" value="submit" class="btn_3">Proceed to Order</button>>
+                                    <button type="submit" value="submit" class="btn_3">Proceed to Order</button>
                                 </div>
                             </div>
                         </div>

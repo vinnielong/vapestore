@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2 style="color: beige; font-family: 'Poppins';">Reset Password</h2>
+                                <h2 style="color: beige; font-family: 'Poppins';">Change Your Password</h2>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="col-lg-6 col-md-6" style="margin: auto;">
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
-                                <h3 style="text-align: center;">PASSWORD RESET <br> </h3>
+                                <h3 style="text-align: center;">PASSWORD CHANGE<br> </h3>
                                 <form class="row contact_form" action="reset" method="POST">
                                     <input type="hidden" class="form-control" id="username" name="username" value="<%=account.getUsername()%>" required>
                                     Old Password: 

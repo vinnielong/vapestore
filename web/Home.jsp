@@ -161,7 +161,7 @@
                                             <h4><a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%></a></h4>
                                             <div class="price">
                                                 <ul>
-                                                    <li><%=p.getPrice()%>đ</li>
+                                                    <li><%out.print(formatter.format(p.getPrice()));%>đ</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -186,7 +186,7 @@
                                             <h4><a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%></a></h4>
                                             <div class="price">
                                                 <ul>
-                                                    <li><%=p.getPrice()%>đ</li>
+                                                    <li><%out.print(formatter.format(p.getPrice()));%>đ</li>
                                                 </ul>
                                             </div>
                                         </div>

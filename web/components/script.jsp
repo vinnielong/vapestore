@@ -24,7 +24,7 @@
 <script src="./assets/js/jquery.sticky.js"></script>
 <script src="./assets/js/jquery.magnific-popup.js"></script>
 
- contact js 
+ <!--contact js 
 <!--<script src="./assets/js/contact.js"></script>-->
 <!--<script src="./assets/js/jquery.form.js"></script>
 <script src="./assets/js/jquery.validate.min.js"></script>

@@ -49,9 +49,8 @@
                                 ArrayList<Product> prod = account.getProducts();
                                 if (prod != null || !prod.isEmpty()) {
                                     for (Product p : prod) {
-                                
+
                             %>  
-                            <input type="hidden" name="id" value="<%=p.getId()%>">
                             <tr>
                                 <td>
                                     <div class="media">
@@ -64,29 +63,34 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><%=p.getPrice()%> đ</h5>
+                                    <h5><%out.print(formatter.format(p.getPrice()));%> đ</h5>
                                 </td>                                    
                                 <td>
-                                        <div class="product_count">                                            
-                                            <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                                            <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
-                                            <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                                        </div>
+                                    <div class="product_count">                                            
+                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                    </div>
                                 </td>
+
                                 <td>
-                                    <h5><%=(p.getPrice() * p.getQuantity())%> đ</h5>
+                                    <h5><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%> đ</h5>
                                 </td>
                                 <%total += p.getPrice() * p.getQuantity();%>
+                            <form method="POST" action="delete">
+                                <input type="hidden" name="id" value="<%=p.getId()%>">
+                                <td><button type="submit" value="submit" style="color: red; border: none;">Delete</a></td>
+                            </form>
                             </tr> 
                             <%}%>
                             <%}%>
-                            <tr class="bottom_button">
-                                <td>
-                                    <a class="btn_1" href="cart">Update Cart</a>
-                                </td>
-                                <td></td>
-                                <td></td>                                   
-                            </tr>
+                            <!--                            <tr class="bottom_button">
+                                                            <td>
+                                                                <a class="btn_1" href="cart">Update Cart</a>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>                                   
+                                                        </tr>-->
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -94,7 +98,7 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                                    <h5><%=total%> đ</h5>
+                                    <h5><%out.print(formatter.format(total));%> đ</h5>
                                 </td>
                             </tr>                               
 
