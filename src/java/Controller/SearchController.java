@@ -36,11 +36,11 @@ public class SearchController extends HttpServlet {
             throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
         ArrayList<Category> category = dao.getCategory();
-        String search = request.getParameter("Search");
+        String search = request.getParameter("result");
         ArrayList<Product> products = dao.search(search);
         request.setAttribute("products", products);
-        request.setAttribute("category", category);  
-        request.getRequestDispatcher("Products.jsp").forward(request, response);
+        request.setAttribute("category", category);
+        request.getRequestDispatcher("SearchResult.jsp").forward(request, response);
     }
 
     /**
@@ -54,12 +54,6 @@ public class SearchController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDAO dao = new ProductDAO();
-        ArrayList<Category> category = dao.getCategory();
-        String search = request.getParameter("Search");
-        ArrayList<Product> products = dao.search(search);
-        request.setAttribute("products", products);
-        doGet(request, response);
     }
 
     /**

@@ -177,9 +177,9 @@ public class ProductDAO extends BaseDAO {
     public ArrayList<Product> search(String text) {
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM dbo.Products WHERE productName like '%? %'";
+            String sql = "SELECT * FROM dbo.Products WHERE productName LIKE ?";
             PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1, text);
+            st.setString(1, "%" + text + "%");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Product p = new Product();

@@ -75,14 +75,14 @@
                         <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                             <ul class="header-right f-left d-none d-lg-block d-flex justify-content-between">
                                 <li class="d-none d-xl-block">
-                                    <form action="search" method="POST" >
-                                        <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
-                                            <input type="text" name="Search" placeholder="Search products" style=" margin-right: -38px;">
+                                    <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
+                                        <form action="search" method="GET">
+                                        <input type="text" name="result" placeholder="Search products" style=" margin-right: -38px;" required="">
                                             <div class="search-icon">
-                                                <i class="fas fa-search special-tag"><button type="submit" value="submit" style="visibility: hidden; margin-right: -13px;" ></button></i>
+                                                <button type="submit" value="submit" style=" background: none; border: none; cursor: pointer"><i class="fas fa-search special-tag"></i></button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </li>
                                 <li>
                                     <div class="shopping-card d-none d-xl-block" style="margin-left: -27px;">

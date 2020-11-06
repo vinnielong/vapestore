@@ -58,7 +58,7 @@
                                             <img src="<%=p.getImage()%>" alt="" />
                                         </div>
                                         <div class="media-body">
-                                            <p><%=p.getName()%></p>
+                                            <a href="productdetail?id=<%=p.getId()%>" style="color: #506172;"><%=p.getName()%></a>
                                         </div>
                                     </div>
                                 </td>

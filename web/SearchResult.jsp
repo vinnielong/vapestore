@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Products
+    Document   : SearchResult
     Created on : Oct 29, 2020, 7:03:10 PM
     Author     : Vinnie Long
 --%>
@@ -154,12 +154,5 @@
         <%@include file="components/footer.jsp"%>
         <%@include file="components/script.jsp"%>
         <script src="assets/js/pagger.js"></script>
-        <%
-            String cate = request.getAttribute("catID").toString();
-            int pageIndex = (int) request.getAttribute("pageIndex");
-            int totalPages = (int) request.getAttribute("totalPages");
-            int cateid = Integer.parseInt(cate);
-        %>
-        <script>pagger('pagination', 'catID', <%=cateid%>, <%=pageIndex%>, <%=totalPages%>, 2);</script>
     </body>
 </html>
