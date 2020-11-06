@@ -11,7 +11,10 @@
             image.src = select.options[select.selectedIndex].value;
         }
     </script>
-
+    <%
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        Account account = (Account) session.getAttribute("account");
+    %>
     <div class="header-area">
         <div class="main-header ">
             <div class="header-top top-bg d-none d-lg-block">
@@ -74,20 +77,21 @@
                                 <li class="d-none d-xl-block">
                                     <form action="search" method="POST" >
                                         <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
-                                            <input type="text" name="Search" placeholder="Search products">
+                                            <input type="text" name="Search" placeholder="Search products" style=" margin-right: -38px;">
                                             <div class="search-icon">
-                                                <i class="fas fa-search special-tag"><button type="submit" value="submit" style="visibility: hidden;" ></button></i>
+                                                <i class="fas fa-search special-tag"><button type="submit" value="submit" style="visibility: hidden; margin-right: -13px;" ></button></i>
                                             </div>
                                         </div>
                                     </form>
                                 </li>
+                                <li>
+                                    <div class="shopping-card d-none d-xl-block" style="margin-left: -27px;">
+                                        <a href="cart"><i class="fas fa-shopping-cart" style="margin-top: 3px;"></i></a>
+                                    </div>
+                                </li>
                             </ul>
-                            <div class="main-menu f-right d-lg-block" style="margin-top: 2px;">
-                                <%
-                                    DecimalFormat formatter = new DecimalFormat("###,###,###");
-                                    Account account = (Account) session.getAttribute("account");
-                                    if (account != null) {
-                                %>
+                            <div class="main-menu f-right d-lg-block d-none" style="margin-top: 2px;">
+                                <%if (account != null) {%>
                                 <nav>
                                     <ul id="navigation">
                                         <li> 

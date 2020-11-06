@@ -28,10 +28,7 @@
         </div>
         <!-- slider Area End-->
 
-        <!--================Checkout Area =================-->       
-        <%
-            Account acc = (Account) request.getAttribute("account");
-        %>
+        <!--================Checkout Area =================-->     
         <section class="checkout_area section_padding">
             <div class="container">               
                 <div class="billing_details">
@@ -40,19 +37,19 @@
                             <div class="col-lg-8">
                                 <h3>Billing Details</h3>
                                 <div class="col-md-6 form-group p_star">
-                                    <input type="text" class="form-control" id="first" name="name" value="<%=acc.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" />
+                                    <input type="text" class="form-control" id="first" name="name" value="<%=account.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" />
                                 </div>
                                 <div class="col-md-5 form-group p_star">
-                                    <input type="text" class="form-control" id="number" name="number" value="<%=acc.getPhonenumber()%>" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required="" />
+                                    <input type="text" class="form-control" id="number" name="number" value="<%=account.getPhonenumber()%>" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required="" />
                                 </div>
                                 <div class="col-md-6 form-group p_star">
-                                    <input type="text" class="form-control" id="email" name="email" value="<%=acc.getEmail()%>" placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" required="" />
+                                    <input type="text" class="form-control" id="email" name="email" value="<%=account.getEmail()%>" placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" required="" />
                                 </div>
                                 <div class="col-md-5 form-group p_star">
                                     <input type="text" class="form-control" id="country" name="country" placeholder="Country" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Country'" required="" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="address" name="address" value="<%=acc.getAddress()%>" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" />
+                                    <input type="text" class="form-control" id="address" name="address" value="<%=account.getAddress()%>" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="city" name="city" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'City'" required="" />

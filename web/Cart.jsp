@@ -67,9 +67,9 @@
                                 </td>                                    
                                 <td>
                                     <div class="product_count">                                            
-                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                        <input class="product_count_item input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
-                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                        <span class="input-number-decrement" style="margin-bottom: -3px;"> <i class="ti-minus"></i></span>
+                                        <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                        <span class="input-number-increment" style="padding-bottom: 7px;"> <i class="ti-plus"></i></span>
                                     </div>
                                 </td>
 
@@ -79,18 +79,12 @@
                                 <%total += p.getPrice() * p.getQuantity();%>
                             <form method="POST" action="delete">
                                 <input type="hidden" name="id" value="<%=p.getId()%>">
-                                <td><button type="submit" value="submit" style="color: red; border: none;">Delete</a></td>
+                                <td><button type="submit" value="submit" style="color: red; border: none; background: none;"><img src="assets/img/icon/delete.png" alt=""/></a></td>
+                                        
                             </form>
                             </tr> 
                             <%}%>
                             <%}%>
-                            <!--                            <tr class="bottom_button">
-                                                            <td>
-                                                                <a class="btn_1" href="cart">Update Cart</a>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>                                   
-                                                        </tr>-->
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -116,5 +110,4 @@
         <%@include file="components/footer.jsp"%>
         <%@include file="components/script.jsp"%>
     </body>
-
 </html>

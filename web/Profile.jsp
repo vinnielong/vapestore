@@ -26,33 +26,29 @@
             </div>
         </div>
         <!-- slider Area End-->
-
-        <%
-            Account acc = (Account) request.getAttribute("account");
-        %>
         <div class="container" style="padding: 50px;">
             <div class="col-lg-8 col-md-8">
                 <h3 class="mb-30">User Profile </h3>
                 <form action="profile" method="POST">
                     Username (Not Editable) :
                     <div class="mt-10">
-                        <input type="text" name="username" value="<%=acc.getUsername()%>" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required="" class="single-input" readonly="">
+                        <input type="text" name="username" value="<%=account.getUsername()%>" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required="" class="single-input" readonly="">
                     </div><br>
                     Full Name:
                     <div class="mt-10">
-                        <input type="text" name="fullname" value="<%=acc.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" class="single-input">
+                        <input type="text" name="fullname" value="<%=account.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" class="single-input">
                     </div><br>
                     E-mail:
                     <div class="mt-10">
-                        <input type="email" name="email" value="<%=acc.getEmail()%>" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" class="single-input">
+                        <input type="email" name="email" value="<%=account.getEmail()%>" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" class="single-input">
                     </div><br>
                     Address:
                     <div class="mt-10">
-                        <input type="text" name="address" value="<%=acc.getAddress()%>" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
+                        <input type="text" name="address" value="<%=account.getAddress()%>" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
                     </div><br>
                     Phone Number:
                     <div class="mt-10">
-                        <input type="text" name="phonenumber" value="<%=acc.getPhonenumber()%>" placeholder="Phone Num" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Num'" required="" class="single-input">
+                        <input type="text" name="phonenumber" value="<%=account.getPhonenumber()%>" placeholder="Phone Num" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Num'" required="" class="single-input">
                     </div><br>                   
                     <a href="reset" class="genric-btn primary e-large" style="float: left; background-color: #4cd3e3;">Reset Password</a>
                     <button type="submit" value="submit" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3;">Save</button>

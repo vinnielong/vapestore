@@ -26,9 +26,6 @@
             </div>
         </div>
         <!-- slider Area End-->
-        <%
-            Account accounts = (Account) request.getAttribute("acc");
-        %>
         <section class="login_part section_padding " style="padding: 0px;">
             <div class="container">
                 <div class="row align-items-center">               
