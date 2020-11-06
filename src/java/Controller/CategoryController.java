@@ -42,7 +42,7 @@ public class CategoryController extends HttpServlet {
             page = "1";
         }
         int pageIndex = Integer.parseInt(page);
-        int pageSize = 4;
+        int pageSize = 6;
         if (catID == 0) {
             int totalRecords = dao.getTotalProducts();
             int totalPages = totalRecords % pageSize == 0 ? totalRecords / pageSize : totalRecords / pageSize + 1;

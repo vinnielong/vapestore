@@ -21,12 +21,13 @@ public class Checkout {
     private String city;
     private String postcode;
     private String message;
-    private ArrayList<Product> totalproducts = new ArrayList<>();
+    private String orders;
+    private int total;
 
     public Checkout() {
     }
 
-    public Checkout(String fullname, String phonenumber, String email, String country, String address, String city, String postcode, String message) {
+    public Checkout(String fullname, String phonenumber, String email, String country, String address, String city, String postcode, String message, String orders, int total) {
         this.fullname = fullname;
         this.phonenumber = phonenumber;
         this.email = email;
@@ -35,7 +36,11 @@ public class Checkout {
         this.city = city;
         this.postcode = postcode;
         this.message = message;
+        this.orders = orders;
+        this.total = total;
     }
+
+    
 
     public String getFullname() {
         return fullname;
@@ -101,15 +106,21 @@ public class Checkout {
         this.message = message;
     }
 
-    public ArrayList<Product> getTotalproducts() {
-        return totalproducts;
+    public String getOrders() {
+        return orders;
     }
 
-    public void setTotalproducts(ArrayList<Product> totalproducts) {
-        this.totalproducts = totalproducts;
+    public void setOrders(String orders) {
+        this.orders = orders;
     }
-    
-    
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
     
     
 }

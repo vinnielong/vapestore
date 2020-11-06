@@ -37,7 +37,7 @@ public class CheckoutController extends BaseAuthController {
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {     
         CheckoutDAO cdao = new CheckoutDAO();
-        String username = request.getParameter("username");
+        String order = String.valueOf(request.getParameter("order"));
         String fullname = request.getParameter("name");
         String number = request.getParameter("number");
         String email = request.getParameter("email");
@@ -46,12 +46,7 @@ public class CheckoutController extends BaseAuthController {
         String city = request.getParameter("city");
         String postcode = request.getParameter("zip");
         String message = request.getParameter("message");
-        Account account = dao.getAccountByID(username);
-//        ArrayList<Product> prod = account.getProducts();
-        request.setAttribute("name", fullname);
-        request.setAttribute("number", number);
-        request.setAttribute("email", email);
-        request.setAttribute("address", address);
+        int total = Integer.parseInt(request.getParameter("total"));
         Checkout c = new Checkout();
         c.setFullname(fullname);
         c.setPhonenumber(number);
@@ -61,9 +56,13 @@ public class CheckoutController extends BaseAuthController {
         c.setCity(city);
         c.setPostcode(fullname);
         c.setMessage(email);
+        c.setOrders(order);
+        c.setTotal(total);
         boolean isOrdered = cdao.createOrder(c);
         if (isOrdered) {
             response.sendRedirect("home");
+        } else {
+            response.getWriter().println("fail");
         }
     }
 

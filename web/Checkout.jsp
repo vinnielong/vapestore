@@ -41,7 +41,7 @@
                                 <h3>Billing Details</h3>
                                 <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" id="first" name="name" value="<%=acc.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" />
-                                    </div>
+                                </div>
                                 <div class="col-md-5 form-group p_star">
                                     <input type="text" class="form-control" id="number" name="number" value="<%=acc.getPhonenumber()%>" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required="" />
                                 </div>
@@ -81,12 +81,15 @@
                                         </li>
                                         <%
                                             int total = 0;
+                                            String order = "";
                                             ArrayList<Product> prod = account.getProducts();
                                             if (prod != null || !prod.isEmpty()) {
                                                 for (Product p : prod) {
+                                                    order += p.getName() + " * " + p.getQuantity() + " / ";
                                         %>
                                         <li>
-                                            <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%>
+                                            <input type="hidden" name="order" value="<%=order%>">
+                                            <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%><br>
                                                 <span class="middle"><%=p.getQuantity()%></span>
                                                 <span class="last"><%=(p.getPrice() * p.getQuantity())%></span>
                                             </a>
@@ -111,8 +114,9 @@
                                                 <span><%=total + 50000%>đ</span>
                                             </a>
                                         </li>
+                                        <input type="hidden" name="total" value="<%=total%>">
                                     </ul><br>
-                                    <button type="submit" value="submit" class="btn_3" href="#">Proceed to Order</button>>
+                                    <button type="submit" value="submit" class="btn_3">Proceed to Order</button>>
                                 </div>
                             </div>
                         </div>
