@@ -487,7 +487,7 @@
                     }
                 }
             }
-        }
+        };
     })();
 
     inputNumber($('.input-number'));

@@ -67,9 +67,9 @@
                                 </td>                                    
                                 <td>
                                     <div class="product_count">                                            
-                                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                                        <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
-                                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
+                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="product_count_item input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                     </div>
                                 </td>
 
