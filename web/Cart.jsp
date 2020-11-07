@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2 style="color: beige; font-family: 'Poppins';">Your Cart</h2>
+                                <h2 style="">Your Cart</h2>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                 <%}%>
                                 <tr>
                                     <td>
-                                        <button type="submit" value="submit" class="btn_1" style="cursor: pointer;">Update Cart</button>
+                                        <button type="submit" value="submit" class="btn_1" >Update Cart</button>
                                     </td>
                                     <td></td>
                                     <td></td>

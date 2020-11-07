@@ -4063,7 +4063,8 @@ input:focus {
 
 /* line 120, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_h1-hero.scss */
 .slider-area .hero-cap h2 {
-  color: #000;
+  color: beige; 
+  font-family: 'Poppins';
   font-size: 50px;
   font-weight: 700;
   text-transform: capitalize;
@@ -8387,6 +8388,7 @@ del {
   transition: 0.5s;
   text-transform: capitalize;
   color: #fff;
+  cursor: pointer;
 }
 
 /* line 36, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_button.scss */
@@ -8411,6 +8413,7 @@ del {
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 /* line 53, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_button.scss */
@@ -9013,6 +9016,7 @@ del {
   line-height: 50px;
   text-align: center;
   display: inline-block;
+  cursor: pointer;
 }
 
 @media (max-width: 991px) {
@@ -10517,6 +10521,7 @@ input:focus {
   padding: 10px;
   border-left: 1px solid #dddddd;
   display: inline-block;
+  cursor: pointer;
 }
 
 /* line 786, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
@@ -10538,6 +10543,7 @@ input:focus {
   padding: 10px;
   border-left: 1px solid #dddddd;
   display: inline-block;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {
