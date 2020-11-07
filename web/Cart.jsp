@@ -35,68 +35,75 @@
             <div class="container">
                 <div class="cart_inner">
                     <div class="table-responsive">
-                        <table class="table">
-                            <thead>
+                        <form method="GET" action="update">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <%
+                                    int total = 0;
+                                    ArrayList<Product> prod = account.getProducts();
+                                    if (prod != null || !prod.isEmpty()) {
+                                        for (Product p : prod) {
+
+                                %>  
                                 <tr>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
+                                    <td>
+                                        <input type="hidden" name="pid[]" value="<%=p.getId()%>" />
+                                        <div class="media">
+                                            <div class="d-flex"> 
+                                                <img src="<%=p.getImage()%>" alt="" />
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="productdetail?id=<%=p.getId()%>" style="color: #506172;"><%=p.getName()%></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5><%out.print(formatter.format(p.getPrice()));%> đ</h5>
+                                    </td>                                    
+                                    <td>
+                                        <div class="product_count">    
+                                            <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%> đ</h5>
+                                    </td>
+                                    <%total += p.getPrice() * p.getQuantity();%>
+                                    <td>
+                                        <a href="delete?id=<%=p.getId()%>" style="cursor: pointer; border: none; background: none;"><img src="assets/img/icon/delete.png" alt=""/></a>
+                                    </td>                                       
+                                </tr> 
+                                <%}%>
+                                <%}%>
+                                <tr>
+                                    <td>
+                                        <button type="submit" value="submit" class="btn_1" style="cursor: pointer;">Update Cart</button>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            </thead>
-                            <%
-                                int total = 0;
-                                ArrayList<Product> prod = account.getProducts();
-                                if (prod != null || !prod.isEmpty()) {
-                                    for (Product p : prod) {
-
-                            %>  
-                            <tr>
-                                <td>
-                                    <div class="media">
-                                        <div class="d-flex"> 
-                                            <img src="<%=p.getImage()%>" alt="" />
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="productdetail?id=<%=p.getId()%>" style="color: #506172;"><%=p.getName()%></a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <h5><%out.print(formatter.format(p.getPrice()));%> đ</h5>
-                                </td>                                    
-                                <td>
-                                    <div class="product_count">                                            
-                                        <span class="input-number-decrement" style="margin-bottom: -3px;"> <i class="ti-minus"></i></span>
-                                        <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
-                                        <span class="input-number-increment" style="padding-bottom: 7px;"> <i class="ti-plus"></i></span>
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <h5><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%> đ</h5>
-                                </td>
-                                <%total += p.getPrice() * p.getQuantity();%>
-                            <form method="POST" action="delete">
-                                <input type="hidden" name="id" value="<%=p.getId()%>">
-                                <td><button type="submit" value="submit" style="color: red; border: none; background: none;"><img src="assets/img/icon/delete.png" alt=""/></a></td>
-                                        
-                            </form>
-                            </tr> 
-                            <%}%>
-                            <%}%>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <h5>Subtotal</h5>
-                                </td>
-                                <td>
-                                    <h5><%out.print(formatter.format(total));%> đ</h5>
-                                </td>
-                            </tr>                               
-
-                        </table>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Subtotal</h5>
+                                    </td>
+                                    <td>
+                                        <h5><%out.print(formatter.format(total));%> đ</h5>
+                                    </td>
+                                </tr>                                                           
+                            </table>
+                        </form>
                         <div class="checkout_btn_inner float-right">
                             <a class="btn_1" href="category?catID=0">Continue Shopping</a>
                             <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>">Proceed to checkout</a>

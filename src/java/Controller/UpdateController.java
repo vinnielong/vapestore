@@ -20,19 +20,29 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Vinnie Long
  */
-public class DeleteController extends BaseAuthController {
+public class UpdateController extends BaseAuthController {
 
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = dao.getProductByID(id);
+        String[] pid = request.getParameterValues("pid[]");
+        String[] pquantity = request.getParameterValues("quantity");
+        int[] id = new int[pid.length];
+        int[] quantity = new int[pquantity.length];
         Account account = (Account) request.getSession().getAttribute("account");
         ArrayList<Product> products = account.getProducts();
-        for (Product p : products) {
-            if (p.getId() == id) {
-                products.remove(p);
-                break;
+        for (int i = 0; i < pid.length; i++) {
+            id[i] = Integer.parseInt(pid[i]);
+        }
+        for (int i = 0; i < pquantity.length; i++) {
+            quantity[i] = Integer.parseInt(pquantity[i]);
+        }
+        for (int i = 0; i < id.length; i++) {
+            for (Product p : products) {
+                if (p.getId() == id[i]) {
+                    p.setQuantity(quantity[i]);
+                }
+
             }
         }
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
@@ -43,5 +53,4 @@ public class DeleteController extends BaseAuthController {
         
     }
 
-    
 }

@@ -68,12 +68,12 @@
                                     <form action="productdetail?id=<%=p.getId()%>" method="POST">
                                         Quantity:
                                         <div class="product_count d-inline-block">
-                                            <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                            <span class="product_count_item inumber-decrement" style="cursor: pointer;"> <i class="ti-minus"></i></span>
                                             <input class="product_count_item input-number" name="quantity" type="text" value="1" min="0" max="100">
-                                            <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                            <span class="product_count_item number-increment" style="cursor: pointer;"> <i class="ti-plus"></i></span>
                                         </div>
                                         <div class="add_to_cart">
-                                            <button type="submit" value="submit" class="btn_3">add to cart</button>
+                                            <button type="submit" value="submit" class="btn_3" style="cursor: pointer;">add to cart</button>
                                         </div>
                                     </form>
                                 </div>

@@ -10916,8 +10916,8 @@ input:focus {
 
 /* line 1156, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_product.scss */
 .cart_inner .table tbody tr td .product_count input {
-  width: 100px;
-  padding-left: 22px;
+  width: 60px;
+  padding-left: 17px;
   height: 50px;
   outline: none;
   box-shadow: none;
