@@ -27,30 +27,34 @@ public class UpdateController extends BaseAuthController {
         ProductDAO dao = new ProductDAO();
         String[] pid = request.getParameterValues("pid[]");
         String[] pquantity = request.getParameterValues("quantity");
-        int[] id = new int[pid.length];
-        int[] quantity = new int[pquantity.length];
-        Account account = (Account) request.getSession().getAttribute("account");
-        ArrayList<Product> products = account.getProducts();
-        for (int i = 0; i < pid.length; i++) {
-            id[i] = Integer.parseInt(pid[i]);
-        }
-        for (int i = 0; i < pquantity.length; i++) {
-            quantity[i] = Integer.parseInt(pquantity[i]);
-        }
-        for (int i = 0; i < id.length; i++) {
-            for (Product p : products) {
-                if (p.getId() == id[i]) {
-                    p.setQuantity(quantity[i]);
-                }
-
+        if (pid != null && pquantity != null) {
+            int[] id = new int[pid.length];
+            int[] quantity = new int[pquantity.length];
+            Account account = (Account) request.getSession().getAttribute("account");
+            ArrayList<Product> products = account.getProducts();
+            for (int i = 0; i < pid.length; i++) {
+                id[i] = Integer.parseInt(pid[i]);
             }
+            for (int i = 0; i < pquantity.length; i++) {
+                quantity[i] = Integer.parseInt(pquantity[i]);
+            }
+            for (int i = 0; i < id.length; i++) {
+                for (Product p : products) {
+                    if (p.getId() == id[i]) {
+                        p.setQuantity(quantity[i]);
+                    }
+
+                }
+            }
+            request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("Cart.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+
     }
 
 }

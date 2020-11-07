@@ -12,7 +12,6 @@
     <%@include file="components/head.jsp"%>
     <body>
         <%@include file="components/header.jsp"%>
-
         <!-- slider Area Start-->
         <div class="slider-area ">
             <!-- Mobile Menu -->
@@ -84,7 +83,11 @@
                                 <%}%>
                                 <tr>
                                     <td>
+                                        <%if (prod.isEmpty()) {%>
+                                        <button type="button" value="submit" class="btn_1" style="display: none;">Update Cart</button>
+                                        <%} else {%>
                                         <button type="submit" value="submit" class="btn_1" >Update Cart</button>
+                                        <%}%>
                                     </td>
                                     <td></td>
                                     <td></td>
@@ -106,7 +109,11 @@
                         </form>
                         <div class="checkout_btn_inner float-right">
                             <a class="btn_1" href="category?catID=0">Continue Shopping</a>
+                            <%if (prod.isEmpty()) {%>
+                            <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>" style="display: none;">Proceed to checkout</a>
+                            <%} else {%>
                             <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>">Proceed to checkout</a>
+                            <%}%>
                         </div>
                     </div>
                 </div>

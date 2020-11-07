@@ -98,15 +98,15 @@
                                         </li>
                                         <li>
                                             <a href="#">Shipping
-                                                <span>Flat rate: 50,000đ</span>
+                                                <span>Flat rate: 30,000đ</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">Total
-                                                <span><%out.print(formatter.format(total + 50000));%>đ</span>
+                                                <span><%out.print(formatter.format(total + 30000));%>đ</span>
                                             </a>
                                         </li>
-                                        <input type="hidden" name="total" value="<%=total%>">
+                                        <input type="hidden" name="total" value="<%=total + 30000%>">
                                     </ul><br>
                                     <button type="submit" value="submit" class="btn_3">Proceed to Order</button>
                                 </div>

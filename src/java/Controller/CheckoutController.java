@@ -55,7 +55,7 @@ public class CheckoutController extends BaseAuthController {
         c.setAddress(address);
         c.setCity(city);
         c.setPostcode(fullname);
-        c.setMessage(email);
+        c.setMessage(message);
         c.setOrders(order);
         c.setTotal(total);
         boolean isOrdered = cdao.createOrder(c);

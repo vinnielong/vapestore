@@ -99,7 +99,6 @@
                                             <ul class="submenu" style="left: -13px;">
                                                 <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
                                                 <li><a href="cart">Cart</a></li>
-                                                <li><a href="checkout?username=<%=account.getUsername()%>">Checkout</a></li>
                                                 <li><a href="logout"> Logout</a></li>
                                             </ul>
                                         </li>
