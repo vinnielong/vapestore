@@ -75,7 +75,7 @@
                                             if(p.getStock().equalsIgnoreCase("Out Of Stock") || p.getStock().equalsIgnoreCase("Contact for Information")){
                                         %>
                                         <div class="add_to_cart">
-                                            <button type="submit" value="submit" class="btn_disable" disabled="">add to cart</button>
+                                            <a href="contact" class="btn_disable" disabled="">Contact Us</a>
                                         </div>
                                         <%} else {%>
                                         <div class="add_to_cart">
