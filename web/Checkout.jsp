@@ -39,13 +39,13 @@
                                 <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" id="first" name="name" value="<%=account.getFullname()%>" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required="" />
                                 </div>
-                                <div class="col-md-5 form-group p_star">
+                                <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" id="number" name="number" value="<%=account.getPhonenumber()%>" placeholder="Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required="" />
                                 </div>
                                 <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" id="email" name="email" value="<%=account.getEmail()%>" placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'" required="" />
                                 </div>
-                                <div class="col-md-5 form-group p_star">
+                                <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" id="country" name="country" placeholder="Country" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Country'" required="" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
@@ -82,7 +82,7 @@
                                         <li>
                                             <input type="hidden" name="order" value="<%=order%>">
                                             <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%><br>
-                                                <span class="middle"><%=p.getQuantity()%></span>
+                                                <span class="middle">x <%=p.getQuantity()%></span>
                                                 <span class="last"><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%>đ</span>
                                             </a>
                                         </li><br>       
