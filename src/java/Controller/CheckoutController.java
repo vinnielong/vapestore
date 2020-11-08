@@ -9,12 +9,8 @@ import DAO.AccountDAO;
 import DAO.CheckoutDAO;
 import Model.Account;
 import Model.Checkout;
-import Model.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -58,10 +54,12 @@ public class CheckoutController extends BaseAuthController {
         c.setMessage(message);
         c.setOrders(order);
         c.setTotal(total);
-        boolean isOrdered = cdao.createOrder(c);
-        if (isOrdered) {
+        if (!order.equalsIgnoreCase("null")) {
+            cdao.createOrder(c);
             response.sendRedirect("home");
+        } else {
+            request.setAttribute("errorMsg", "No products in cart to process order!");
+            doGet(request, response);
         }
     }
-
 }

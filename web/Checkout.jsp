@@ -108,7 +108,17 @@
                                         </li>
                                         <input type="hidden" name="total" value="<%=total + 30000%>">
                                     </ul><br>
-                                    <button type="submit" value="submit" class="btn_3">Proceed to Order</button>
+                                    <%if (account.getProducts().isEmpty()) {%>
+                                    <%if (request.getAttribute("errorMsg") != null) {%>
+                                    <label for="incorrect" style="color: red;"><%=request.getAttribute("errorMsg")%></label>
+                                    <%}%>
+                                    <button type="submit" value="submit" class="btn_disable" style="width: 315px;" disabled="">Proceed to Order</button>                                    
+                                    <%} else {%>
+                                    <%if (request.getAttribute("errorMsg") != null) {%>
+                                    <label for="incorrect" style="color: red;"><%=request.getAttribute("errorMsg")%></label>
+                                    <%}%>
+                                    <button type="submit" value="submit" class="btn_3" style="width: 315px;">Proceed to Order</button>
+                                    <%}%>
                                 </div>
                             </div>
                         </div>

@@ -71,9 +71,17 @@
                                             <input class="product_count_item input-number" name="quantity" type="text" value="1" min="1" max="100">
                                             <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                                         </div>
+                                        <%
+                                            if(p.getStock().equalsIgnoreCase("Out Of Stock") || p.getStock().equalsIgnoreCase("Contact for Information")){
+                                        %>
+                                        <div class="add_to_cart">
+                                            <button type="submit" value="submit" class="btn_disable" disabled="">add to cart</button>
+                                        </div>
+                                        <%} else {%>
                                         <div class="add_to_cart">
                                             <button type="submit" value="submit" class="btn_3">add to cart</button>
                                         </div>
+                                        <%}%>
                                     </form>
                                 </div>
                             </div>

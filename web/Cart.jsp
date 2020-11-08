@@ -47,7 +47,7 @@
                                 <%
                                     int total = 0;
                                     ArrayList<Product> prod = account.getProducts();
-                                    if (prod != null || !prod.isEmpty()) {
+                                    if (prod != null && !prod.isEmpty()) {
                                         for (Product p : prod) {
 
                                 %>  
@@ -80,20 +80,36 @@
                                     </td>                                       
                                 </tr> 
                                 <%}%>
-                                <%}%>
+                                <%} else {%>
                                 <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: center;"><h5>No items to show!</h5></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <%}%>
+                                <%if (prod.isEmpty()) {%>
+                                <tr style="display: none;">
                                     <td>
-                                        <%if (prod.isEmpty()) {%>
-                                        <button type="button" value="submit" class="btn_1" style="display: none;">Update Cart</button>
-                                        <%} else {%>
-                                        <button type="submit" value="submit" class="btn_1" >Update Cart</button>
-                                        <%}%>
+                                        <button type="button" value="submit" class="btn_1">Update Cart</button>
                                     </td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
+                                <%} else {%>
+                                <tr>
+                                    <td>
+                                        <button type="submit" value="submit" class="btn_1" >Update Cart</button>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <%}%>
                                 <tr>
                                     <td></td>
                                     <td></td>
