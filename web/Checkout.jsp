@@ -75,12 +75,11 @@
                                             int total = 0;
                                             String order = "";
                                             ArrayList<Product> prod = account.getProducts();
-                                            if (prod != null || !prod.isEmpty()) {
+                                            if (prod != null && !prod.isEmpty()) {
                                                 for (Product p : prod) {
                                                     order += p.getName() + " * " + p.getQuantity() + " / ";
                                         %>
-                                        <li>
-                                            <input type="hidden" name="order" value="<%=order%>">
+                                        <li>                                           
                                             <a href="productdetail?id=<%=p.getId()%>"><%=p.getName()%><br>
                                                 <span class="middle">x <%=p.getQuantity()%></span>
                                                 <span class="last"><%out.print(formatter.format(p.getPrice() * p.getQuantity()));%>đ</span>
@@ -122,6 +121,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="order" value="<%=order%>">
                     </form>
                 </div>
             </div>

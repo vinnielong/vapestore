@@ -77,16 +77,21 @@
                                 <li class="d-none d-xl-block">
                                     <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
                                         <form action="search" method="GET">
-                                        <input type="text" name="result" placeholder="Search products" style=" margin-right: -38px;" required="">
+                                            <input type="text" name="result" placeholder="Search products" style="margin-right: -24px" required="">
                                             <div class="search-icon">
-                                                <button type="submit" value="submit" style=" background: none; border: none; cursor: pointer"><i class="fas fa-search special-tag"></i></button>
+                                                <button type="submit" value="submit" style=" background: none; border: none; cursor: pointer"><i class="fas fa-search special-tag"></i></button>                                                
                                             </div>
                                         </form>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="shopping-card d-none d-xl-block" style="margin-left: -27px;">
+                                        <%if (account != null) {%>
                                         <a href="cart"><i class="fas fa-shopping-cart" style="margin-top: 3px;"></i></a>
+                                        <span class="span"><%=account.getProducts().size()%></span>
+                                            <%} else {%>
+                                        <a href="cart"><i class="fas fa-shopping-cart" style="margin-top: 3px;"></i></a>
+                                            <%}%>
                                     </div>
                                 </li>
                             </ul>
