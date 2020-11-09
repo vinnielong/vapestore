@@ -156,8 +156,8 @@
         <script src="assets/js/pagger.js"></script>
         <%
             String cate = request.getAttribute("catID").toString();
-            int pageIndex = (int) request.getAttribute("pageIndex");
-            int totalPages = (int) request.getAttribute("totalPages");
+            int pageIndex = Integer.parseInt(request.getAttribute("pageIndex").toString());
+            int totalPages = Integer.parseInt(request.getAttribute("totalPages").toString());
             int cateid = Integer.parseInt(cate);
         %>
         <script>pagger('pagination', 'catID', <%=cateid%>, <%=pageIndex%>, <%=totalPages%>, 2);</script>
