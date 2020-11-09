@@ -68,7 +68,7 @@
                                     </td>                                    
                                     <td>
                                         <div class="product_count">    
-                                            <input class="input-number" type="text" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
+                                            <input class="input-number" type="number" name="quantity" value="<%=p.getQuantity()%>" min="0" max="100">
                                         </div>
                                     </td>
                                     <td>
@@ -126,9 +126,9 @@
                         <div class="checkout_btn_inner float-right">
                             <a class="btn_1" href="category?catID=0">Continue Shopping</a>
                             <%if (prod.isEmpty()) {%>
-                            <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>" style="display: none;">Proceed to checkout</a>
+                            <a class="btn_1 checkout_btn_1" href="checkout" style="display: none;">Proceed to checkout</a>
                             <%} else {%>
-                            <a class="btn_1 checkout_btn_1" href="checkout?username=<%=account.getUsername()%>">Proceed to checkout</a>
+                            <a class="btn_1 checkout_btn_1" href="checkout">Proceed to checkout</a>
                             <%}%>
                         </div>
                     </div>

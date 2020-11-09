@@ -24,15 +24,14 @@ public class CheckoutController extends BaseAuthController {
 
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        Account account = dao.getAccountByID(username);
-        request.setAttribute("account", account);
+        Account account = (Account) request.getSession().getAttribute("account");
         request.getRequestDispatcher("Checkout.jsp").forward(request, response);
     }
 
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CheckoutDAO cdao = new CheckoutDAO();
+        Account account = (Account) request.getSession().getAttribute("account");
         String order = String.valueOf(request.getParameter("order"));
         String fullname = request.getParameter("name");
         String number = request.getParameter("number");
@@ -54,8 +53,9 @@ public class CheckoutController extends BaseAuthController {
         c.setMessage(message);
         c.setOrders(order);
         c.setTotal(total);
-        if (!order.equalsIgnoreCase("null")) {
+        if (!order.equalsIgnoreCase("null")) {           
             cdao.createOrder(c);
+            account.getProducts().clear();
             response.sendRedirect("home");
         } else {
             request.setAttribute("errorMsg", "No products in cart to process order!");

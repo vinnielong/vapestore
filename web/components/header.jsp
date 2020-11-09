@@ -1,5 +1,4 @@
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="sun.java2d.pipe.hw.AccelDeviceEventListener"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.Product"%>
 <%@page import="Model.Account"%>
