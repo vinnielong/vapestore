@@ -22,7 +22,7 @@ public class ContactDAO extends BaseDAO{
     public boolean sendContact(Contact c) {
         boolean isSent = false;
         try {
-            String sql = "INSERT INTO dbo.Contact (name, email, subject, message ) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO dbo.Contact (name, email, subject, message) VALUES (?, ?, ?, ?)";
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, c.getName());
             st.setString(2, c.getEmail());

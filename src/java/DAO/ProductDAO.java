@@ -106,6 +106,22 @@ public class ProductDAO extends BaseDAO {
         }
         return products;
     }
+    
+    public int getTotalProductsByCatID(int id) {
+        int count = 0;
+        try {
+            String sql = "SELECT COUNT(*) total FROM dbo.Products WHERE categoryID = ?";
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt("total");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
 
     public ArrayList<String> getProductImage(int id) {
         ArrayList<String> image = new ArrayList<>();
@@ -136,22 +152,6 @@ public class ProductDAO extends BaseDAO {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return category;
-    }
-
-    public int getTotalProductsByCatID(int id) {
-        int count = 0;
-        try {
-            String sql = "SELECT COUNT(*) total FROM dbo.Products WHERE categoryID = ?";
-            PreparedStatement st = connection.prepareStatement(sql);
-            st.setInt(1, id);
-            ResultSet rs = st.executeQuery();
-            if (rs.next()) {
-                count = rs.getInt("total");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return count;
     }
 
     public ArrayList<Product> getLatestProducts() {

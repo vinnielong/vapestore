@@ -71,7 +71,7 @@
                                 </nav>
                             </div>
                         </div> 
-                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card" style="left: 20px;">
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card" style="left: 10px;">
                             <ul class="header-right f-left d-none d-lg-block d-flex justify-content-between">
                                 <li class="d-none d-xl-block">
                                     <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
@@ -110,7 +110,7 @@
                                         </nav>
                                     </div>
                                     <%} else {%>
-                                    <div class="f-right d-none d-lg-block"> <a href="login" class="btn header-btn" style="margin-top: 2px; margin-left: -21px;">Login/Register</a></div>
+                                    <div class="f-right d-none d-lg-block"> <a href="login" class="btn header-btn" style=" font-size: 15px; margin-top: 2px; margin-left: -21px;">Login/Register</a></div>
                                     <%}%>
                                 </li>
                             </ul>
