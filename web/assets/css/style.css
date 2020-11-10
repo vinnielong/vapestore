@@ -3581,9 +3581,9 @@ input:focus {
 /* line 129, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_headerMenu.scss */
 .header-bottom .main-menu ul ul.submenu {
     position: absolute;
-    width: 170px;
+    width: 147px;
     background: #fff;
-    left: 0;
+    left: 21px;
     top: 90%;
     visibility: hidden;
     opacity: 0;

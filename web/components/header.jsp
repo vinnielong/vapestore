@@ -71,47 +71,49 @@
                                 </nav>
                             </div>
                         </div> 
-                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card" style="left: 20px;">
                             <ul class="header-right f-left d-none d-lg-block d-flex justify-content-between">
                                 <li class="d-none d-xl-block">
                                     <div class="form-box f-right " style="margin-left: 100px; margin-top: 5px;">
                                         <form action="search" method="GET">
-                                            <input type="text" name="result" placeholder="Search products" style="margin-right: -24px" required="">
+                                            <input type="text" name="result" placeholder="Search products" required="">
                                             <div class="search-icon">
                                                 <button type="submit" value="submit" style=" background: none; border: none; cursor: pointer"><i class="fas fa-search special-tag"></i></button>                                                
                                             </div>
                                         </form>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="shopping-card d-none d-xl-block" style="margin-left: -27px;">
+                                <li style="margin-left: -26px;">
+                                    <div class="shopping-card d-none d-xl-block">
                                         <%if (account != null) {%>
                                         <a href="cart"><i class="fas fa-shopping-cart" style="margin-top: 3px;"></i></a>
                                         <span class="span"><%=account.getProducts().size()%></span>
-                                            <%} else {%>
+                                        <%} else {%>
                                         <a href="cart"><i class="fas fa-shopping-cart" style="margin-top: 3px;"></i></a>
                                             <%}%>
                                     </div>
                                 </li>
-                            </ul>
-                            <div class="main-menu f-right d-lg-block d-none" style="margin-top: 2px;">
-                                <%if (account != null) {%>
-                                <nav>
-                                    <ul id="navigation">
-                                        <li> 
-                                            <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
-                                            <ul class="submenu" style="left: -13px;">
-                                                <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
-                                                <li><a href="cart">Cart</a></li>
-                                                <li><a href="logout"> Logout</a></li>
+                                <li>
+                                    <%if (account != null) {%>
+                                    <div class="main-menu f-right d-lg-block d-none" style="margin-top: 2px; margin-left: -41px;">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li> 
+                                                    <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
+                                                        <li><a href="cart">Cart</a></li>
+                                                        <li><a href="logout"> Logout</a></li>
+                                                    </ul>
+                                                </li>
                                             </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <%} else {%>
-                            <li class="d-none d-lg-block"> <a href="login" class="btn header-btn">Sign in</a></li>
-                                <%}%>
+                                        </nav>
+                                    </div>
+                                    <%} else {%>
+                                    <div class="f-right d-none d-lg-block"> <a href="login" class="btn header-btn" style="margin-top: 2px; margin-left: -21px;">Login/Register</a></div>
+                                    <%}%>
+                                </li>
+                            </ul>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">

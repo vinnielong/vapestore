@@ -25,7 +25,7 @@ public class UpdateController extends BaseAuthController {
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductDAO dao = new ProductDAO();
-        String[] pid = request.getParameterValues("pid[]");
+        String[] pid = request.getParameterValues("pid");
         String[] pquantity = request.getParameterValues("quantity");
         if (pid != null && pquantity != null) {
             int[] id = new int[pid.length];

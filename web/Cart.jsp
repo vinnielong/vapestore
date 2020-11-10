@@ -53,7 +53,7 @@
                                 %>  
                                 <tr>
                                     <td>
-                                        <input type="hidden" name="pid[]" value="<%=p.getId()%>" />
+                                        <input type="hidden" name="pid" value="<%=p.getId()%>" />
                                         <div class="media">
                                             <div class="d-flex"> 
                                                 <img src="<%=p.getImage()%>" alt="" />
