@@ -30,6 +30,8 @@ public class CheckoutController extends BaseAuthController {
 
     @Override
     protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         CheckoutDAO cdao = new CheckoutDAO();
         Account account = (Account) request.getSession().getAttribute("account");
         String order = String.valueOf(request.getParameter("order"));
@@ -53,7 +55,7 @@ public class CheckoutController extends BaseAuthController {
         c.setMessage(message);
         c.setOrders(order);
         c.setTotal(total);
-        if (!order.equalsIgnoreCase("null")) {           
+        if (!order.equalsIgnoreCase("null")) {
             cdao.createOrder(c);
             account.getProducts().clear();
             response.sendRedirect("home");

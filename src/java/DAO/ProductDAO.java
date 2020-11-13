@@ -157,7 +157,7 @@ public class ProductDAO extends BaseDAO {
     public ArrayList<Product> getLatestProducts() {
         ArrayList<Product> products = new ArrayList<>();
         try {
-            String sql = "SELECT TOP 6 * FROM dbo.Products";
+            String sql = "SELECT TOP 6 * FROM Products ORDER BY productID DESC";
             PreparedStatement st = connection.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
