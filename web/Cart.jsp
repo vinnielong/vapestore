@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="cart_inner">
                     <div class="table-responsive">
-                        <form method="GET" action="update">
+                        <form method="GET" action="manage">
                             <table class="table">
                                 <thead>
                                     <tr>

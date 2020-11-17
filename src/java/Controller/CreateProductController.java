@@ -1,0 +1,54 @@
+package Controller;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import Controller.BaseAuthController;
+import DAO.ProductDAO;
+import Model.Product;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Vinnie Long
+ */
+public class CreateProductController extends BaseAuthController {
+
+    @Override
+    protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("CreateProduct.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProductDAO dao = new ProductDAO();
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        int price = Integer.parseInt(request.getParameter("price"));
+        int category = Integer.parseInt(request.getParameter("category"));
+        String detail = request.getParameter("detail");
+        String stock = request.getParameter("stock");
+        String img = request.getParameter("img");
+        Product p = new Product();
+        p.setId(id);
+        p.setName(name);
+        p.setPrice(price);
+        p.setCategoryID(category);
+        p.setShortdesc(detail);
+        p.setStock(stock);
+        p.setImage(img);
+        boolean isCreated = dao.createProduct(p);
+        if(isCreated) {
+            response.sendRedirect("manage");
+        }
+    }
+
+}

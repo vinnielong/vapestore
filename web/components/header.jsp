@@ -102,7 +102,7 @@
                                                     <a href="#" class="btn header-btn" style="color: white;"><%=account.getFullname()%></a>
                                                     <ul class="submenu">
                                                         <li><a href="profile?username=<%=account.getUsername()%>">My Profile</a></li>
-                                                        <li><a href="cart">Cart</a></li>
+                                                        <li><a href="manage">Manage Shop</a></li>
                                                         <li><a href="logout"> Logout</a></li>
                                                     </ul>
                                                 </li>
