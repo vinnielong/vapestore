@@ -58,6 +58,7 @@
                     <div class="mt-10">
                         <textarea name="detail" value="" placeholder="Detail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detail'" required="" class="single-input" style="height: 200px;"></textarea>
                     </div><br> 
+                    <a href="manage" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3; margin-left: 10px;">Exit</a>                    
                     <button type="submit" value="submit" class="genric-btn primary e-large" style="float: right; background-color: #4cd3e3;">Save</button>
             </div>
         </div>

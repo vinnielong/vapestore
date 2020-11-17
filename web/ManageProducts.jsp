@@ -38,7 +38,8 @@
                         </form>
                     </div>
                     <br>
-                    <div class="f-right" style="padding-bottom: 25px;">
+                    <div class="col-lg-4 col-md-4 f-left"><a class="btn_1" href="createproduct" style="margin-left: -13px; padding: 12px 50px;">Add New Product</a></div>
+                    <div class="col-lg-1 col-md-1 f-right" style="padding-bottom: 25px; margin-right: 19px;">                        
                         <ul class="pagination"></ul>
                     </div>
                     <br>
@@ -106,7 +107,7 @@
         <%
             int pageIndex = Integer.parseInt(request.getAttribute("pageIndex").toString());
             int totalPages = Integer.parseInt(request.getAttribute("totalPages").toString());
-            if(pageIndex > 0 && totalPages > 0) {
+            if (pageIndex > 0 && totalPages > 0) {
         %>
         <script>paggerBasic('pagination', <%=pageIndex%>, <%=totalPages%>, 2);</script>
         <%}%>
