@@ -6,7 +6,6 @@
 package Controller;
 
 import DAO.ProductDAO;
-import Model.Account;
 import Model.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
